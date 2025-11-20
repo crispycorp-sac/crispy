@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somos Crispy | Agencia Creativa</title>
-    <meta name="description" content="Hacemos que tu marca suene fuerte y crujiente. Marketing digital, branding y contenido audiovisual.">
+    <title>Somos Crispy | Technology Partners Perú</title>
+    <meta name="description" content="Somos el socio tecnológico en Perú que tu empresa necesita. Especialistas en automatización de ventas, CRM e IA.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 1. VARIABLES Y RESET --- */
+        /* --- 1. VARIABLES Y RESET (Misma identidad visual) --- */
         :root {
             --primary: #FFD700; /* Amarillo Crispy */
             --dark: #111111;
+            --darker: #0a0a0a;
             --light: #f4f4f4;
-            --grey: #333;
+            --grey-text: #aaa;
             --transition: all 0.3s ease;
         }
 
@@ -28,9 +29,7 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -40,7 +39,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
@@ -50,7 +49,7 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
-        /* --- 2. NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN --- */
         header {
             background: rgba(17, 17, 17, 0.95);
             padding: 1.5rem 5%;
@@ -62,16 +61,20 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
-            color: var(--primary);
+            color: white;
             letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span { color: white; }
+        .logo i { color: var(--primary); }
 
         nav ul { display: flex; gap: 2rem; }
         
@@ -79,6 +82,7 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: var(--transition);
+            text-transform: uppercase;
         }
 
         nav a:hover { color: var(--primary); }
@@ -86,86 +90,91 @@
         .btn-cta {
             background: var(--primary);
             color: var(--dark);
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
-            font-weight: 700;
+            font-weight: 800;
+            text-transform: uppercase;
             transition: var(--transition);
+            display: inline-block;
         }
 
         .btn-cta:hover {
             background: white;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
         }
 
-        /* --- 3. HERO SECTION (Portada) --- */
-        #hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 2rem;
-            background: radial-gradient(circle at center, #222 0%, #111 100%);
-            position: relative;
-        }
-
-        #hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        #hero h1 span {
-            color: var(--primary);
-            display: block;
-        }
-
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-            color: #ccc;
-        }
-
-        /* --- 4. SERVICIOS (Grid) --- */
+        /* --- SECCIONES GENÉRICAS --- */
         .section-padding { padding: 5rem 10%; }
-
+        
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-title p { color: var(--grey-text); max-width: 700px; margin: 1rem auto 0; }
 
-        .section-title .line {
+        .line {
             width: 80px;
-            height: 5px;
+            height: 4px;
             background: var(--primary);
             margin: 0 auto;
         }
 
+        /* --- HERO SECTION --- */
+        #hero {
+            height: 90vh; /* Un poco menos alto para que se vea la siguiente sección */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Alineado a la izquierda como tu web actual */
+            padding: 0 10%;
+            /* Fondo sutil de tecnología/espacio */
+            background: linear-gradient(to right, rgba(17,17,17,1) 30%, rgba(17,17,17,0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        #hero h1 span { color: var(--primary); }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: #ddd;
+            font-weight: 300;
+        }
+
+        /* --- GRID DE SERVICIOS/BENEFICIOS --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background: #1a1a1a;
-            padding: 2.5rem;
+            background: rgba(26, 26, 26, 0.8); /* Semi transparente */
+            padding: 2.5rem 2rem;
             border-radius: 15px;
             border: 1px solid #333;
             transition: var(--transition);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
             border-color: var(--primary);
             transform: translateY(-10px);
+            background: rgba(40, 40, 40, 0.9);
         }
 
         .card i {
@@ -174,163 +183,216 @@
             margin-bottom: 1.5rem;
         }
 
-        .card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
-        .card p { font-size: 0.9rem; color: #aaa; }
-
-        /* --- 5. SOBRE NOSOTROS (Texto + Imagen) --- */
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            flex-wrap: wrap;
+        .card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+        .card p { font-size: 0.9rem; color: var(--grey-text); }
+        
+        /* Numeración sutil para los servicios */
+        .card-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: rgba(255,255,255,0.05);
+            font-size: 3rem;
         }
 
-        .about-text { flex: 1; }
-        .about-img { 
-            flex: 1; 
-            height: 400px;
-            background-color: #222; /* Placeholder para tu foto */
-            border-radius: 20px;
+        /* --- PARTNERS --- */
+        .partners-flex {
             display: flex;
-            align-items: center;
             justify-content: center;
-            border: 2px solid var(--primary);
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
         }
-
-        .highlight { color: var(--primary); }
-
-        /* --- 6. CONTACTO --- */
-        #contacto {
-            background: #0a0a0a;
-            text-align: center;
+        
+        /* Estilos temporales para los logos de partners si no hay imágenes */
+        .partner-placeholder {
+            font-weight: 900;
+            color: #555;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: var(--transition);
         }
+        .partner-placeholder:hover { color: var(--primary); }
+        .partner-placeholder span { display: block; font-size: 0.7rem; font-weight: 400; color: #888;}
+
+
+        /* --- CONTACTO --- */
+        #contacto { background: var(--darker); }
 
         .contact-form {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 3rem auto 0;
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
         input, textarea {
-            padding: 1rem;
-            border-radius: 5px;
-            border: 1px solid #333;
-            background: #1a1a1a;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 2px solid #333;
+            background: #151515;
             color: white;
             font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--primary);
+            background: #1a1a1a;
         }
 
         button.submit {
             background: var(--primary);
             color: var(--dark);
-            padding: 1rem;
+            padding: 1.2rem;
             border: none;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 1rem;
         }
 
-        button.submit:hover { background: white; }
+        button.submit:hover { background: white; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
 
-        /* --- 7. FOOTER --- */
+        /* --- FOOTER --- */
         footer {
-            padding: 2rem;
+            padding: 3rem 10%;
             text-align: center;
-            border-top: 1px solid #222;
+            background: #050505;
             font-size: 0.9rem;
             color: #666;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .socials { margin-bottom: 1rem; }
-        .socials a {
-            margin: 0 10px;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
+        .socials a { margin-left: 15px; font-size: 1.2rem; transition: var(--transition); }
         .socials a:hover { color: var(--primary); }
 
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE SIMPLE --- */
         @media (max-width: 768px) {
-            header { padding: 1rem 2rem; }
-            nav ul { display: none; } /* Simple mobile fix: hide menu items for now */
+            header { padding: 1rem 5%; }
+            nav ul { display: none; } /* Menú móvil pendiente */
+            #hero { align-items: center; text-align: center; height: auto; padding-top: 120px; padding-bottom: 60px;}
             #hero h1 { font-size: 2.5rem; }
-            .about-container { flex-direction: column; }
-            .about-img { width: 100%; height: 300px; }
+            footer { flex-direction: column; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Somos<span>Crispy</span>.</div>
+        <div class="logo">
+            <i class="fas fa-microchip"></i> Somos Crispy
+        </div>
         <nav>
             <ul>
                 <li><a href="#hero">Inicio</a></li>
+                <li><a href="#beneficios">Aliado</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto" class="btn-cta">Contáctanos</a></li>
+                <li><a href="#partners">Partners</a></li>
             </ul>
         </nav>
+        <a href="#contacto" class="btn-cta">Agenda Demo</a>
     </header>
 
     <section id="hero">
-        
-        <h1>Creatividad <br><span>Fresca & Crujiente</span></h1>
-        <p>Transformamos ideas simples en experiencias digitales inolvidables. Tu marca merece destacar del resto.</p>
-        <a href="#servicios" class="btn-cta">Ver Servicios</a>
+        <h1>Soluciones de tecnología <br><span>a tu medida.</span></h1>
+        <p>Somos el socio tecnológico en Perú que tu empresa necesita. Expertos en modernización, nube e Inteligencia Artificial.</p>
+        <a href="#contacto" class="btn-cta">Habla con un experto</a>
     </section>
 
-    <section id="servicios" class="section-padding">
+    <section id="beneficios" class="section-padding" style="background: #151515;">
         <div class="section-title">
-            <h2>Nuestro Menú</h2>
+            <h2>Tu Aliado Estratégico</h2>
             <div class="line"></div>
-            <p style="margin-top:1rem; color:#aaa;">Soluciones cocinadas a fuego lento</p>
+            <p>Impulsamos la modernización tecnológica de tu empresa. Nuestro objetivo es claro: ayudarte a crecer.</p>
         </div>
         
         <div class="services-grid">
             <div class="card">
-                <i class="fas fa-bolt"></i>
-                <h3>Branding & Diseño</h3>
-                <p>Identidad visual que impacta. Logos, paletas de colores y manuales de marca.</p>
+                <i class="fas fa-chart-line"></i>
+                <h3>Aumenta tus ventas</h3>
+                <p>Maximizamos tus resultados comerciales con estrategias basadas en datos.</p>
             </div>
             <div class="card">
-                <i class="fas fa-video"></i>
-                <h3>Contenido Audiovisual</h3>
-                <p>Videos y fotografías profesionales para redes sociales y webs corporativas.</p>
+                <i class="fas fa-flag"></i>
+                <h3>Alcanza tus metas</h3>
+                <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos.</p>
             </div>
             <div class="card">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Marketing Digital</h3>
-                <p>Estrategias de crecimiento, gestión de redes sociales y campañas de anuncios.</p>
+                <i class="fas fa-cogs"></i>
+                <h3>Optimiza procesos</h3>
+                <p>Eficiencia operativa potenciada por IA y automatización inteligente.</p>
             </div>
             <div class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Desarrollo Web</h3>
-                <p>Páginas rápidas, seguras y optimizadas para vender más (como esta).</p>
+                <i class="fas fa-hand-holding-usd"></i>
+                <h3>Genera eficiencias</h3>
+                <p>Reduce costos y tiempos asegurando que la tecnología sea una palanca de crecimiento.</p>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="section-padding" style="background: #151515;">
-        <div class="about-container">
-            <div class="about-img">
-                <i class="fas fa-users" style="font-size: 3rem; color: #333;"></i>
+    <section id="servicios" class="section-padding">
+        <div class="section-title">
+            <h2>Nuestro Menú Tecnológico</h2>
+            <div class="line"></div>
+            <p>Especialidad de la casa: <span style="color:var(--primary)">Automatización del proceso de ventas</span>.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="card">
+                <span class="card-number">01</span>
+                <i class="fas fa-address-book"></i>
+                <h3>Gestionar Leads Inteligente</h3>
+                <p>Captura y organiza contactos de todas tus fuentes en un solo lugar. No pierdas más oportunidades.</p>
             </div>
-            <div class="about-text">
-                <h2>¿Qué es el factor <span class="highlight">Crispy</span>?</h2>
-                <p style="margin-bottom: 1rem;">Somos un equipo apasionado que cree que aburrido es sinónimo de invisible. Nos especializamos en darle ese toque "extra" a tu comunicación.</p>
-                <p>Ya sea que necesites renovar tu imagen o lanzar una campaña agresiva, estamos aquí para asegurar que tu mensaje llegue claro, fuerte y con estilo.</p>
-                <br>
-                <a href="#contacto" style="border-bottom: 2px solid var(--primary); padding-bottom: 5px;">Conoce al equipo -></a>
+            <div class="card">
+                <span class="card-number">02</span>
+                <i class="fas fa-robot"></i>
+                <h3>Automatizar tus Ventas</h3>
+                <p>Diseña embudos personalizados y deja que Kommo automatice tareas repetitivas y seguimientos.</p>
             </div>
+            <div class="card">
+                <span class="card-number">03</span>
+                <i class="fas fa-comments-dollar"></i>
+                <h3>Comunicarte sin Límites</h3>
+                <p>Integra tus canales favoritos (WhatsApp, IG) para interactuar con clientes dondequiera que estén.</p>
+            </div>
+            <div class="card">
+                <span class="card-number">04</span>
+                <i class="fas fa-users-cog"></i>
+                <h3>Colaborar en Equipo</h3>
+                <p>Mantén a tu equipo sincronizado con información compartida en cada etapa del proceso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="section-padding" style="background: #151515; padding-bottom: 3rem;">
+        <div class="section-title" style="margin-bottom: 2rem;">
+            <h4>Nuestros Partnerships Globales</h4>
+        </div>
+        <div class="partners-flex">
+            <div class="partner-placeholder">monday.com<br><span>Certified Partner</span></div>
+            <div class="partner-placeholder" style="font-size: 2rem; color: #fff;">Kommo<br><span>Partner Oficial</span></div>
+            <div class="partner-placeholder">Adobe<br><span>Registered Reseller</span></div>
+        </div>
+    </section>
+    
+    <section class="section-padding" style="padding-top: 2rem; padding-bottom: 4rem; background: #151515; text-align: center;">
+         <p style="color: #666; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 2rem;">Confían en Nosotros</p>
+         <div class="partners-flex" style="gap: 4rem;">
+             <div class="partner-placeholder" style="color: #888;">SANIT SERVICE</div>
+            <div class="partner-placeholder" style="color: #888;">Zen U</div>
         </div>
     </section>
 
@@ -338,22 +400,25 @@
         <div class="section-title">
             <h2>Hablemos</h2>
             <div class="line"></div>
+            <p>Agenda una cita con nuestros expertos. Descubre cómo herramientas como Kommo pueden revolucionar tu gestión de clientes y ventas.</p>
         </div>
         <form class="contact-form">
-            <input type="text" placeholder="Tu Nombre" required>
-            <input type="email" placeholder="Tu Correo Electrónico" required>
-            <textarea rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-            <button type="submit" class="submit">ENVIAR MENSAJE</button>
+            <input type="text" placeholder="Tu Nombre / Empresa" required>
+            <input type="email" placeholder="Tu Correo Corporativo" required>
+            <textarea rows="4" placeholder="¿Qué proceso te gustaría automatizar?" required></textarea>
+            <button type="submit" class="submit">SOLICITAR DEMOSTRACIÓN</button>
         </form>
     </section>
 
     <footer>
+        <div class="logo" style="font-size: 1.2rem;">
+            <i class="fas fa-microchip"></i> Somos Crispy.
+        </div>
+        <p>&copy; 2024 Technology Partners. Todos los derechos reservados.</p>
         <div class="socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p>&copy; 2024 Somos Crispy. Todos los derechos reservados.</p>
     </footer>
 
 </body>
