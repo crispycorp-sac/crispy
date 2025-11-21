@@ -70,9 +70,32 @@
             backdrop-filter: blur(10px);
         }
        
+/* --- ESTILOS LOGO + TEXTO --- */
         .logo-container {
             display: flex;
-            align-items: center;
+            align-items: center;     /* Alinea imagen y texto verticalmente */
+            gap: 12px;               /* Espacio entre el logo y el texto */
+            text-decoration: none;   /* Quita el subrayado del link */
+        }
+        
+        .nav-logo-img {
+            height: 40px;            /* Ajusté un poquito la altura para equilibrar */
+            width: auto;
+        }
+        
+        .logo-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif; /* La fuente gruesa de la marca */
+            font-weight: 900;        /* Negrita fuerte */
+            font-size: 1.4rem;       /* Tamaño legible */
+            letter-spacing: -0.5px;  /* Las letras un poco más juntas (estilo moderno) */
+            text-transform: uppercase; /* Opcional: Si lo quieres TODO MAYÚSCULAS */
+        }
+        
+        /* Pequeño efecto hover para el texto también */
+        .logo-container:hover .logo-text {
+            color: var(--primary);   /* El texto se pone amarillo al pasar el mouse */
+            transition: 0.3s;
         }
         
         .nav-logo-img {
