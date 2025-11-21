@@ -206,6 +206,21 @@
             gap: 3rem;
             margin-top: 2rem;
         }
+        /* --- ESTILO PARA LOS LOGOS --- */
+        .partner-logo {
+            max-width: 150px;       /* Ancho máximo para que no se vean gigantes */
+            height: auto;           /* Mantiene la proporción real */
+            object-fit: contain;    /* Se asegura de que se vea todo el logo */
+            filter: grayscale(100%); /* EFECTO CRISPY: Se ven en blanco y negro */
+            opacity: 0.6;           /* Un poco transparentes para no distraer */
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);  /* Al pasar el mouse, recuperan su color */
+            opacity: 1;             /* Se vuelven totalmente visibles */
+            transform: scale(1.1);  /* Crecen un poquito */
+        }
         
         /* Estilos temporales para los logos de partners si no hay imágenes */
         .partner-placeholder {
@@ -378,15 +393,23 @@
     </section>
 
     <section id="partners" class="section-padding" style="background: #151515; padding-bottom: 3rem;">
-        <div class="section-title" style="margin-bottom: 2rem;">
-            <h4>Nuestros Partnerships Globales</h4>
-        </div>
-        <div class="partners-flex">
-            <div class="partner-placeholder">monday.com<br><span>Certified Partner</span></div>
-            <div class="partner-placeholder" style="font-size: 2rem; color: #fff;">Kommo<br><span>Partner Oficial</span></div>
-            <div class="partner-placeholder">Adobe<br><span>Registered Reseller</span></div>
-        </div>
-    </section>
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h4>Nuestros Partnerships Globales</h4>
+            </div>
+            <div class="partners-flex">
+                <img src="monday-badge.png" alt="Monday Partner" class="partner-logo">
+                <img src="kommo-badge.png" alt="Kommo Partner" class="partner-logo">
+                <img src="adobe-badge.png" alt="Adobe Partner" class="partner-logo">
+            </div>
+        </section>
+        
+        <section class="section-padding" style="padding-top: 2rem; padding-bottom: 4rem; background: #151515; text-align: center;">
+             <p style="color: #666; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 2rem;">Confían en Nosotros</p>
+             <div class="partners-flex" style="gap: 4rem;">
+                 <img src="cliente-sanit.png" alt="Sanit Service" class="partner-logo">
+                <img src="cliente-zenu.png" alt="Zen U" class="partner-logo">
+            </div>
+        </section>
     
     <section class="section-padding" style="padding-top: 2rem; padding-bottom: 4rem; background: #151515; text-align: center;">
          <p style="color: #666; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 2rem;">Confían en Nosotros</p>
