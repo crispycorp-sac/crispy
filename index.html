@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crispy Technology Partners Perú | CTP</title>
     <meta name="description" content="Somos el socio tecnológico en Perú que tu empresa necesita. Especialistas en automatización de ventas, CRM e IA.">
-    
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -63,18 +65,21 @@
             border-bottom: 1px solid #333;
             backdrop-filter: blur(10px);
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: white;
-            letter-spacing: -1px;
+       
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
-
-        .logo i { color: var(--primary); }
+        
+        .nav-logo-img {
+            height: 45px;  /* ESTA ES LA CLAVE: Ajusta este número si lo quieres más grande o pequeño */
+            width: auto;   /* Esto asegura que no se deforme */
+            transition: var(--transition);
+        }
+        
+        .nav-logo-img:hover {
+            opacity: 0.8; /* Un pequeño efecto al pasar el mouse */
+        }
 
         nav ul { display: flex; gap: 2rem; }
         
@@ -306,9 +311,9 @@
 <body>
 
     <header>
-        <div class="logo">
-            <i class="fas fa-microchip"></i> Crispy Technology Partners
-        </div>
+        <a href="#hero" class="logo-container">
+            <img src="crispy-logo-web.png" alt="CTP Logo" class="nav-logo-img">
+        </a>
         <nav>
             <ul>
                 <li><a href="#hero">Inicio</a></li>
