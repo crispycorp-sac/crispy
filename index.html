@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 1. VARIABLES Y RESET (Misma identidad visual) --- */
+        /* --- 1. VARIABLES Y RESET --- */
         :root {
             --primary: #FFD700; /* Amarillo Crispy */
             --dark: #111111;
@@ -69,43 +69,37 @@
             border-bottom: 1px solid #333;
             backdrop-filter: blur(10px);
         }
-       
-/* --- ESTILOS LOGO + TEXTO --- */
+        
+        /* --- ESTILOS LOGO + TEXTO --- */
         .logo-container {
             display: flex;
-            align-items: center;     /* Alinea imagen y texto verticalmente */
-            gap: 12px;               /* Espacio entre el logo y el texto */
-            text-decoration: none;   /* Quita el subrayado del link */
-        }
-        
-        .nav-logo-img {
-            height: 40px;            /* Ajusté un poquito la altura para equilibrar */
-            width: auto;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
         }
         
         .logo-text {
             color: white;
-            font-family: 'Montserrat', sans-serif; /* La fuente gruesa de la marca */
-            font-weight: 900;        /* Negrita fuerte */
-            font-size: 1.4rem;       /* Tamaño legible */
-            letter-spacing: -0.5px;  /* Las letras un poco más juntas (estilo moderno) */
-            text-transform: uppercase; /* Opcional: Si lo quieres TODO MAYÚSCULAS */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
         }
         
-        /* Pequeño efecto hover para el texto también */
         .logo-container:hover .logo-text {
-            color: var(--primary);   /* El texto se pone amarillo al pasar el mouse */
+            color: var(--primary);
             transition: 0.3s;
         }
         
         .nav-logo-img {
-            height: 45px;  /* ESTA ES LA CLAVE: Ajusta este número si lo quieres más grande o pequeño */
-            width: auto;   /* Esto asegura que no se deforme */
+            height: 45px;
+            width: auto;
             transition: var(--transition);
         }
         
         .nav-logo-img:hover {
-            opacity: 0.8; /* Un pequeño efecto al pasar el mouse */
+            opacity: 0.8;
         }
 
         nav ul { display: flex; gap: 2rem; }
@@ -156,13 +150,12 @@
 
         /* --- HERO SECTION --- */
         #hero {
-            height: 90vh; /* Un poco menos alto para que se vea la siguiente sección */
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* Alineado a la izquierda como tu web actual */
+            align-items: flex-start;
             padding: 0 10%;
-            /* Fondo sutil de tecnología/espacio */
             background: linear-gradient(to right, rgba(17,17,17,1) 30%, rgba(17,17,17,0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
@@ -193,7 +186,7 @@
         }
 
         .card {
-            background: rgba(26, 26, 26, 0.8); /* Semi transparente */
+            background: rgba(26, 26, 26, 0.8);
             padding: 2.5rem 2rem;
             border-radius: 15px;
             border: 1px solid #333;
@@ -218,7 +211,6 @@
         .card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
         .card p { font-size: 0.9rem; color: var(--grey-text); }
         
-        /* Numeración sutil para los servicios */
         .card-number {
             position: absolute;
             top: 1rem;
@@ -238,23 +230,22 @@
             gap: 3rem;
             margin-top: 2rem;
         }
-        /* --- ESTILO PARA LOS LOGOS --- */
+        
         .partner-logo {
-            max-width: 150px;       /* Ancho máximo para que no se vean gigantes */
-            height: auto;           /* Mantiene la proporción real */
-            object-fit: contain;    /* Se asegura de que se vea todo el logo */
-            filter: grayscale(100%); /* EFECTO CRISPY: Se ven en blanco y negro */
-            opacity: 0.6;           /* Un poco transparentes para no distraer */
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.6;
             transition: all 0.3s ease;
         }
         
         .partner-logo:hover {
-            filter: grayscale(0%);  /* Al pasar el mouse, recuperan su color */
-            opacity: 1;             /* Se vuelven totalmente visibles */
-            transform: scale(1.1);  /* Crecen un poquito */
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
         }
         
-        /* Estilos temporales para los logos de partners si no hay imágenes */
         .partner-placeholder {
             font-weight: 900;
             color: #555;
@@ -325,63 +316,71 @@
         .socials a { margin-left: 15px; font-size: 1.2rem; transition: var(--transition); }
         .socials a:hover { color: var(--primary); }
 
-/* --- RESPONSIVE SIMPLE (OPTIMIZADO PARA MÓVIL) --- */
+        /* --- ANIMACIONES SCROLL (NUEVO) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+        .delay-400 { transition-delay: 0.4s; }
+
+        /* --- RESPONSIVE OPTIMIZADO PARA MÓVIL (CORREGIDO) --- */
         @media (max-width: 768px) {
-            /* 1. Ajuste del contenedor principal (Header) */
             header { 
-                padding: 0.8rem 4%; /* Menos relleno a los lados */
-                gap: 10px; /* Espacio mínimo entre logo y botón */
+                padding: 0.8rem 4%; 
+                gap: 10px; 
             }
             
-            /* 2. Reducir el Logo (Icono) */
             .nav-logo-img {
-                height: 30px; /* Se reduce de 45px a 30px */
+                height: 30px; 
             }
             
-            /* 3. Reducir el Texto del Logo */
             .logo-text {
-                font-size: 0.8rem; /* Letra mucho más pequeña (antes 1.4rem) */
-                line-height: 1.1;  /* Si el texto se parte en dos líneas, que queden pegaditas */
-                max-width: 140px;  /* Forzamos a que no ocupe todo el ancho */
+                font-size: 0.8rem; 
+                line-height: 1.1; 
+                max-width: 150px; 
             }
             
-            /* 4. Reducir el Botón "Agenda Demo" */
             .btn-cta {
-                padding: 0.5rem 0.8rem; /* Botón más delgado */
-                font-size: 0.75rem;     /* Texto del botón más pequeño */
+                padding: 0.5rem 0.8rem; 
+                font-size: 0.75rem; 
                 font-weight: 700;
-                white-space: nowrap;    /* Evita que el texto del botón se parta */
+                white-space: nowrap; 
             }
 
-            /* Ocultar menú de navegación clásico */
             nav ul { display: none; } 
             
-            /* Ajustes del Hero (Portada) */
             #hero { 
                 align-items: center; 
                 text-align: center; 
                 height: auto; 
-                padding-top: 100px; /* Menos espacio arriba */
+                padding-top: 100px; 
                 padding-bottom: 60px;
                 padding-left: 5%;
                 padding-right: 5%;
             }
             
-            #hero h1 { font-size: 2.2rem; } /* Título un poco más pequeño */
+            #hero h1 { font-size: 2.2rem; }
             
-            /* Footer en columna */
             footer { flex-direction: column; justify-content: center; gap: 2rem;}
-
-            .desktop-only { display: none; }
         }
     </style>
 </head>
 <body>
 
-<header>
+    <header>
         <a href="#hero" class="logo-container">
             <img src="crispy-logo-web.png" alt="CTP Logo" class="nav-logo-img">
-            <span class="logo-text">Crispy <span style="display:inline-block;" class="desktop-only">Technology Partners</span></span>
+            <span class="logo-text">Crispy Technology Partners</span>
         </a>
         <nav>
             <ul>
@@ -401,29 +400,29 @@
     </section>
 
     <section id="beneficios" class="section-padding" style="background: #151515;">
-        <div class="section-title">
+        <div class="section-title reveal">
             <h2>Tu Aliado Estratégico</h2>
             <div class="line"></div>
             <p>Impulsamos la modernización tecnológica de tu empresa. Nuestro objetivo es claro: ayudarte a crecer.</p>
         </div>
         
         <div class="services-grid">
-            <div class="card">
+            <div class="card reveal delay-100">
                 <i class="fas fa-chart-line"></i>
                 <h3>Aumenta tus ventas</h3>
                 <p>Maximizamos tus resultados comerciales con estrategias basadas en datos.</p>
             </div>
-            <div class="card">
+            <div class="card reveal delay-200">
                 <i class="fas fa-flag"></i>
                 <h3>Alcanza tus metas</h3>
                 <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos.</p>
             </div>
-            <div class="card">
+            <div class="card reveal delay-300">
                 <i class="fas fa-cogs"></i>
                 <h3>Optimiza procesos</h3>
                 <p>Eficiencia operativa potenciada por IA y automatización inteligente.</p>
             </div>
-            <div class="card">
+            <div class="card reveal delay-400">
                 <i class="fas fa-hand-holding-usd"></i>
                 <h3>Genera eficiencias</h3>
                 <p>Reduce costos y tiempos asegurando que la tecnología sea una palanca de crecimiento.</p>
@@ -431,8 +430,8 @@
         </div>
     </section>
 
-<section id="servicios" class="section-padding">
-        <div class="section-title">
+    <section id="servicios" class="section-padding">
+        <div class="section-title reveal">
             <h2>Nuestro Menú Tecnológico</h2>
             <div class="line"></div>
             <p>Ingredientes de clase mundial para cada necesidad de tu empresa.</p>
@@ -440,7 +439,7 @@
         
         <div class="services-grid">
             
-            <div class="card">
+            <div class="card reveal delay-100">
                 <span class="card-number">01</span>
                 <i class="fas fa-tasks"></i>
                 <h3>Gestión de Trabajo</h3>
@@ -448,7 +447,7 @@
                 <p>Adiós al caos operativo. Centraliza proyectos, tareas y equipos en un solo sistema operativo visual (Work OS) que se adapta a cualquier flujo de trabajo.</p>
             </div>
 
-            <div class="card">
+            <div class="card reveal delay-200">
                 <span class="card-number">02</span>
                 <i class="fas fa-robot"></i>
                 <h3>CRM Conversacional</h3>
@@ -456,7 +455,7 @@
                 <p>Automatiza tus ventas sin perder el toque humano. El primer CRM del mundo basado en mensajería para gestionar leads de WhatsApp e Instagram.</p>
             </div>
 
-            <div class="card">
+            <div class="card reveal delay-300">
                 <span class="card-number">03</span>
                 <i class="fab fa-whatsapp"></i>
                 <h3>Chat Multiagente</h3>
@@ -464,7 +463,7 @@
                 <p>Conecta a todo tu equipo de ventas a una sola línea de WhatsApp. Monitorea conversaciones en tiempo real y unifica tu atención al cliente.</p>
             </div>
 
-            <div class="card">
+            <div class="card reveal delay-400">
                 <span class="card-number">04</span>
                 <i class="fas fa-laptop-code"></i>
                 <h3>Implementación Crispy</h3>
@@ -537,6 +536,29 @@
             <a href="https://wa.me/51994753687"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
+
+    <script>
+        // Configuración del Observador
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active'); // Agrega la clase que lo hace visible
+                    observer.unobserve(entry.target); // Deja de observar una vez animado
+                }
+            });
+        }, observerOptions);
+
+        // Seleccionar todos los elementos que tengan la clase 'reveal'
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
