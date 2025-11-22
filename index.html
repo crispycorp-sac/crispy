@@ -325,13 +325,52 @@
         .socials a { margin-left: 15px; font-size: 1.2rem; transition: var(--transition); }
         .socials a:hover { color: var(--primary); }
 
-        /* --- RESPONSIVE SIMPLE --- */
+/* --- RESPONSIVE SIMPLE (OPTIMIZADO PARA MÓVIL) --- */
         @media (max-width: 768px) {
-            header { padding: 1rem 5%; }
-            nav ul { display: none; } /* Menú móvil pendiente */
-            #hero { align-items: center; text-align: center; height: auto; padding-top: 120px; padding-bottom: 60px;}
-            #hero h1 { font-size: 2.5rem; }
-            footer { flex-direction: column; justify-content: center; }
+            /* 1. Ajuste del contenedor principal (Header) */
+            header { 
+                padding: 0.8rem 4%; /* Menos relleno a los lados */
+                gap: 10px; /* Espacio mínimo entre logo y botón */
+            }
+            
+            /* 2. Reducir el Logo (Icono) */
+            .nav-logo-img {
+                height: 30px; /* Se reduce de 45px a 30px */
+            }
+            
+            /* 3. Reducir el Texto del Logo */
+            .logo-text {
+                font-size: 0.8rem; /* Letra mucho más pequeña (antes 1.4rem) */
+                line-height: 1.1;  /* Si el texto se parte en dos líneas, que queden pegaditas */
+                max-width: 140px;  /* Forzamos a que no ocupe todo el ancho */
+            }
+            
+            /* 4. Reducir el Botón "Agenda Demo" */
+            .btn-cta {
+                padding: 0.5rem 0.8rem; /* Botón más delgado */
+                font-size: 0.75rem;     /* Texto del botón más pequeño */
+                font-weight: 700;
+                white-space: nowrap;    /* Evita que el texto del botón se parta */
+            }
+
+            /* Ocultar menú de navegación clásico */
+            nav ul { display: none; } 
+            
+            /* Ajustes del Hero (Portada) */
+            #hero { 
+                align-items: center; 
+                text-align: center; 
+                height: auto; 
+                padding-top: 100px; /* Menos espacio arriba */
+                padding-bottom: 60px;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            
+            #hero h1 { font-size: 2.2rem; } /* Título un poco más pequeño */
+            
+            /* Footer en columna */
+            footer { flex-direction: column; justify-content: center; gap: 2rem;}
         }
     </style>
 </head>
