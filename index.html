@@ -371,6 +371,8 @@
             
             /* Footer en columna */
             footer { flex-direction: column; justify-content: center; gap: 2rem;}
+
+            .desktop-only { display: none; }
         }
     </style>
 </head>
@@ -379,7 +381,7 @@
 <header>
         <a href="#hero" class="logo-container">
             <img src="crispy-logo-web.png" alt="CTP Logo" class="nav-logo-img">
-            <span class="logo-text">Crispy Technology Partners</span>
+            <span class="logo-text">Crispy <span style="display:inline-block;" class="desktop-only">Technology Partners</span></span>
         </a>
         <nav>
             <ul>
