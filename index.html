@@ -178,20 +178,30 @@
             font-weight: 300;
         }
 
-        /* --- GRID DE SERVICIOS/BENEFICIOS --- */
-        .services-grid {
-                    display: grid;
-                    /* CAMBIA ESTA LÍNEA para que solo haya 3 columnas de igual ancho (1fr) */
-                    grid-template-columns: repeat(3, 1fr); 
-                    gap: 2rem;
-                }
-                
-        /* Opcional: Asegúrate de que esto siga siendo responsive, si no lo era antes */
-        @media (max-width: 1024px) { /* El punto de quiebre puede variar */
+            /* --- GRID DE SERVICIOS/BENEFICIOS --- */
+            /* Esta sección asegura 3 columnas, y si hay menos de 3, las centra. */
             .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Vuelve al original para móviles/tablets */
+                display: grid;
+                /* Fuerza 3 columnas de igual ancho para 5 elementos (3 en Fila 1, 2 en Fila 2) */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 2rem;
+                
+                /* Configuración para centrar el grupo de tarjetas horizontalmente */
+                width: fit-content; /* El grid solo ocupa el ancho necesario para las 3 columnas */
+                margin-left: auto; /* Mueve el grid completo al centro */
+                margin-right: auto;
             }
-        }
+            
+            /* --- RESPONSIVE: Vuelve al diseño original si el ancho es pequeño (móvil/tablet) --- */
+            @media (max-width: 1024px) { 
+                .services-grid {
+                    /* Permite que el navegador decida cuántas tarjetas caben (2 o 1) */
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+                    width: 100%; /* El grid vuelve a ocupar todo el ancho */
+                    margin-left: unset;
+                    margin-right: unset;
+                }
+            }
 
         .card {
             background: rgba(26, 26, 26, 0.8);
