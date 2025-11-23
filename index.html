@@ -178,17 +178,18 @@
             font-weight: 300;
         }
 
-        /* --- GRID DE SERVICIOS/BENEFICIOS --- */
         .services-grid {
-            display: grid;
-            /* Fuerza 3 columnas de igual ancho para escritorios */
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 2rem;
-            
-            /* Usa Flexbox dentro de la Grid para centrar grupos de ítems */
-            /* Nota: Esto funciona en el contexto de la Grid actual, no es un Flexbox puro */
-            justify-content: center; /* <-- ESTA LÍNEA ES CLAVE para centrar los elementos de la última fila */
-            align-items: flex-start; /* Mantiene las tarjetas alineadas en la parte superior */
+                    display: grid;
+                    /* CAMBIA ESTA LÍNEA para que solo haya 3 columnas de igual ancho (1fr) */
+                    grid-template-columns: repeat(3, 1fr); 
+                    gap: 2rem;
+                }
+                
+        /* Opcional: Asegúrate de que esto siga siendo responsive, si no lo era antes */
+        @media (max-width: 1024px) { /* El punto de quiebre puede variar */
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Vuelve al original para móviles/tablets */
+            }
         }
         
         /* --- RESPONSIVE: Mantiene 1 o 2 columnas en móviles --- */
