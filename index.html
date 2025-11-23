@@ -178,30 +178,27 @@
             font-weight: 300;
         }
 
-            /* --- GRID DE SERVICIOS/BENEFICIOS --- */
-            /* Esta sección asegura 3 columnas, y si hay menos de 3, las centra. */
-            .services-grid {
-                display: grid;
-                /* Fuerza 3 columnas de igual ancho para 5 elementos (3 en Fila 1, 2 en Fila 2) */
-                grid-template-columns: repeat(3, 1fr); 
-                gap: 2rem;
-                
-                /* Configuración para centrar el grupo de tarjetas horizontalmente */
-                width: fit-content; /* El grid solo ocupa el ancho necesario para las 3 columnas */
-                margin-left: auto; /* Mueve el grid completo al centro */
-                margin-right: auto;
-            }
+        /* --- GRID DE SERVICIOS/BENEFICIOS --- */
+        .services-grid {
+            display: grid;
+            /* Fuerza 3 columnas de igual ancho para escritorios */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 2rem;
             
-            /* --- RESPONSIVE: Vuelve al diseño original si el ancho es pequeño (móvil/tablet) --- */
-            @media (max-width: 1024px) { 
-                .services-grid {
-                    /* Permite que el navegador decida cuántas tarjetas caben (2 o 1) */
-                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-                    width: 100%; /* El grid vuelve a ocupar todo el ancho */
-                    margin-left: unset;
-                    margin-right: unset;
-                }
+            /* Usa Flexbox dentro de la Grid para centrar grupos de ítems */
+            /* Nota: Esto funciona en el contexto de la Grid actual, no es un Flexbox puro */
+            justify-content: center; /* <-- ESTA LÍNEA ES CLAVE para centrar los elementos de la última fila */
+            align-items: flex-start; /* Mantiene las tarjetas alineadas en la parte superior */
+        }
+        
+        /* --- RESPONSIVE: Mantiene 1 o 2 columnas en móviles --- */
+        @media (max-width: 1024px) { 
+            .services-grid {
+                /* Permite que el navegador decida cuántas tarjetas caben */
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+                justify-content: unset; /* Deshace el centrado horizontal para móviles */
             }
+        }
 
         .card {
             background: rgba(26, 26, 26, 0.8);
