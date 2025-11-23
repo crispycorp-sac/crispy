@@ -179,27 +179,14 @@
         }
 
         .services-grid {
-                    display: grid;
-                    /* CAMBIA ESTA LÍNEA para que solo haya 3 columnas de igual ancho (1fr) */
-                    grid-template-columns: repeat(3, 1fr); 
-                    gap: 2rem;
-                }
+            display: grid;
+            gap: 2.5rem;
+            /* Layout inteligente */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            justify-content: center;     /* Centra columnas cuando sobran */
+            align-items: stretch;
+        }
                 
-        /* Opcional: Asegúrate de que esto siga siendo responsive, si no lo era antes */
-        @media (max-width: 1024px) { /* El punto de quiebre puede variar */
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Vuelve al original para móviles/tablets */
-            }
-        }
-        
-        /* --- RESPONSIVE: Mantiene 1 o 2 columnas en móviles --- */
-        @media (max-width: 1024px) { 
-            .services-grid {
-                /* Permite que el navegador decida cuántas tarjetas caben */
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-                justify-content: unset; /* Deshace el centrado horizontal para móviles */
-            }
-        }
 
         .card {
             background: rgba(26, 26, 26, 0.8);
