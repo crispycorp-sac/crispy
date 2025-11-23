@@ -180,9 +180,17 @@
 
         /* --- GRID DE SERVICIOS/BENEFICIOS --- */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+                    display: grid;
+                    /* CAMBIA ESTA LÍNEA para que solo haya 3 columnas de igual ancho (1fr) */
+                    grid-template-columns: repeat(3, 1fr); 
+                    gap: 2rem;
+                }
+                
+        /* Opcional: Asegúrate de que esto siga siendo responsive, si no lo era antes */
+        @media (max-width: 1024px) { /* El punto de quiebre puede variar */
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Vuelve al original para móviles/tablets */
+            }
         }
 
         .card {
