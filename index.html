@@ -177,8 +177,50 @@
             color: #ddd;
             font-weight: 300;
         }
+        
+        /* --- NUEVOS ESTILOS PARA #beneficios (Lista de Valor) --- */
+        .value-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-        /* --- GRILLA DE SERVICIOS (MODIFICADA PARA 2x2) --- */
+        .value-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            background: rgba(26, 26, 26, 0.5); /* Fondo sutil para destacar */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .value-item i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .value-item p {
+            color: var(--grey-text);
+            font-size: 0.95rem;
+        }
+        
+        .value-item:hover {
+            background: rgba(40, 40, 40, 0.7);
+        }
+
+        /* --- GRILLA DE SERVICIOS (2x2) --- */
         .services-grid {
             display: grid;
             gap: 2.5rem;
@@ -257,14 +299,13 @@
         .tech-tag strong { color: #ccc; }
         .card:hover .tech-tag strong { color: var(--primary); }
 
-        /* --- NUEVA SECCIÓN: IMPLEMENTATION LOOP (El Motor) --- */
+        /* --- IMPLEMENTATION LOOP (El Motor) --- */
         .implementation-loop-container {
             position: relative;
             margin-top: 3rem;
             padding-top: 3rem;
         }
 
-        /* Conector visual sutil entre la grilla y el loop */
         .implementation-loop-container::before {
             content: '';
             position: absolute;
@@ -290,7 +331,6 @@
             box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
         }
 
-        /* Efecto de brillo en el borde */
         .implementation-card:hover {
              border-color: var(--primary);
              box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
@@ -488,7 +528,7 @@
             }
             #hero h1 { font-size: 2.2rem; }
             
-            /* En móvil, la grilla pasa a 1 columna */
+            /* En móvil, la grilla de servicios pasa a 1 columna */
             .services-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -537,25 +577,26 @@
             <p>Impulsamos la modernización tecnológica de tu empresa. Nuestro objetivo es claro: ayudarte a crecer.</p>
         </div>
         
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"> <div class="card reveal delay-100" style="pointer-events: none; height: auto;">
+        <div class="value-list">
+            <div class="value-item reveal delay-100">
                 <i class="fas fa-chart-line"></i>
-                <h3>Aumenta tus ventas</h3>
-                <p>Maximizamos tus resultados comerciales con estrategias basadas en datos.</p>
+                <h4>Aumenta tus ventas</h4>
+                <p>Maximizamos tus resultados comerciales con estrategias basadas en datos y automatización CRM.</p>
             </div>
-            <div class="card reveal delay-200" style="pointer-events: none; height: auto;">
+            <div class="value-item reveal delay-200">
                 <i class="fas fa-flag"></i>
-                <h3>Alcanza tus metas</h3>
-                <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos.</p>
+                <h4>Alcanza tus metas</h4>
+                <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos, garantizando el ROI.</p>
             </div>
-            <div class="card reveal delay-300" style="pointer-events: none; height: auto;">
+            <div class="value-item reveal delay-300">
                 <i class="fas fa-cogs"></i>
-                <h3>Optimiza procesos</h3>
-                <p>Eficiencia operativa potenciada por IA y automatización inteligente.</p>
+                <h4>Optimiza procesos</h4>
+                <p>Eficiencia operativa potenciada por IA y automatización de flujos de trabajo inteligentes.</p>
             </div>
-            <div class="card reveal delay-400" style="pointer-events: none; height: auto;">
+            <div class="value-item reveal delay-400">
                 <i class="fas fa-hand-holding-usd"></i>
-                <h3>Genera eficiencias</h3>
-                <p>Reduce costos y tiempos asegurando que la tecnología sea una palanca de crecimiento.</p>
+                <h4>Reduce costos</h4>
+                <p>Genera eficiencias y simplifica la gestión de tu empresa con soluciones integradas.</p>
             </div>
         </div>
     </section>
