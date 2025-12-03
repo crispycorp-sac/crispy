@@ -183,12 +183,10 @@
             gap: 2.5rem;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             justify-content: center;
-            justify-items: center;  /* Centra cada tarjeta en su columna */
-
+            justify-items: center; 
         }
 
-                
-
+        /* CARD MODIFICADA PARA SER LINK */
         .card {
             background: rgba(26, 26, 26, 0.8);
             padding: 2.5rem 2rem;
@@ -198,12 +196,19 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            width: 100%;
+            text-decoration: none; /* Asegura que no parezca un link azul */
         }
 
         .card:hover {
             border-color: var(--primary);
             transform: translateY(-10px);
             background: rgba(40, 40, 40, 0.9);
+            cursor: pointer;
         }
 
         .card i {
@@ -212,8 +217,17 @@
             margin-bottom: 1.5rem;
         }
 
-        .card h3 { font-size: 1.1rem; margin-bottom: 1rem; }
-        .card p { font-size: 0.9rem; color: var(--grey-text); }
+        .card h3 { 
+            font-size: 1.1rem; 
+            margin-bottom: 1rem; 
+            color: white; 
+        }
+        
+        .card p { 
+            font-size: 0.9rem; 
+            color: var(--grey-text); 
+            margin-bottom: 1rem;
+        }
         
         .card-number {
             position: absolute;
@@ -224,6 +238,21 @@
             color: rgba(255,255,255,0.05);
             font-size: 3rem;
         }
+
+        /* Nueva clase para el pie de la tarjeta (Powered By) */
+        .tech-tag {
+            margin-top: auto; /* Empuja el contenido al fondo */
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .tech-tag strong { color: #ccc; }
+        .card:hover .tech-tag strong { color: var(--primary); }
 
         /* --- PARTNERS --- */
         .partners-flex {
@@ -248,17 +277,6 @@
             opacity: 1;
             transform: scale(1.1);
         }
-        
-        .partner-placeholder {
-            font-weight: 900;
-            color: #555;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-        .partner-placeholder:hover { color: var(--primary); }
-        .partner-placeholder span { display: block; font-size: 0.7rem; font-weight: 400; color: #888;}
-
 
         /* --- CONTACTO --- */
         #contacto { background: var(--darker); }
@@ -319,7 +337,7 @@
         .socials a { margin-left: 15px; font-size: 1.2rem; transition: var(--transition); }
         .socials a:hover { color: var(--primary); }
 
-        /* --- ANIMACIONES SCROLL (NUEVO) --- */
+        /* --- ANIMACIONES SCROLL --- */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -337,7 +355,7 @@
         .delay-400 { transition-delay: 0.4s; }
         .delay-500 { transition-delay: 0.5s; } 
 
-        /* --- RESPONSIVE OPTIMIZADO PARA MÓVIL (CORREGIDO) --- */
+        /* --- RESPONSIVE OPTIMIZADO PARA MÓVIL --- */
         @media (max-width: 768px) {
             header { 
                 padding: 0.8rem 4%; 
@@ -411,22 +429,22 @@
         </div>
         
         <div class="services-grid">
-            <div class="card reveal delay-100">
+            <div class="card reveal delay-100" style="pointer-events: none; height: auto;">
                 <i class="fas fa-chart-line"></i>
                 <h3>Aumenta tus ventas</h3>
                 <p>Maximizamos tus resultados comerciales con estrategias basadas en datos.</p>
             </div>
-            <div class="card reveal delay-200">
+            <div class="card reveal delay-200" style="pointer-events: none; height: auto;">
                 <i class="fas fa-flag"></i>
                 <h3>Alcanza tus metas</h3>
                 <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos.</p>
             </div>
-            <div class="card reveal delay-300">
+            <div class="card reveal delay-300" style="pointer-events: none; height: auto;">
                 <i class="fas fa-cogs"></i>
                 <h3>Optimiza procesos</h3>
                 <p>Eficiencia operativa potenciada por IA y automatización inteligente.</p>
             </div>
-            <div class="card reveal delay-400">
+            <div class="card reveal delay-400" style="pointer-events: none; height: auto;">
                 <i class="fas fa-hand-holding-usd"></i>
                 <h3>Genera eficiencias</h3>
                 <p>Reduce costos y tiempos asegurando que la tecnología sea una palanca de crecimiento.</p>
@@ -438,50 +456,70 @@
         <div class="section-title reveal">
             <h2>Nuestro Menú Tecnológico</h2>
             <div class="line"></div>
-            <p>Ingredientes de clase mundial para cada necesidad de tu empresa.</p>
+            <p>Soluciones integrales de clase mundial para cada etapa de tu negocio.</p>
         </div>
         
         <div class="services-grid">
             
-            <div class="card reveal delay-100">
+            <a href="servicios-ventas.html" class="card reveal delay-100">
                 <span class="card-number">01</span>
-                <i class="fas fa-tasks"></i>
-                <h3>Gestión de Trabajo</h3>
-                <p style="margin-bottom: 0.5rem; color: white; font-weight: 600;">Powered by monday.com</p>
-                <p>Adiós al caos operativo. Centraliza proyectos, tareas y equipos en un solo sistema operativo visual (Work OS) que se adapta a cualquier flujo de trabajo.</p>
-            </div>
+                <i class="fas fa-comments-dollar"></i>
+                <h3>Centralización de Ventas</h3>
+                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Convierte conversaciones en clientes.</p>
+                <p>Unifica WhatsApp, Instagram y Facebook en una sola bandeja. Automatiza respuestas y asegura que ningún lead se quede sin contestar.</p>
+                
+                <div class="tech-tag">
+                    Powered by: <strong>Kommo | Mercately</strong>
+                </div>
+            </a>
 
-            <div class="card reveal delay-200">
+            <a href="servicios-proyectos.html" class="card reveal delay-200">
                 <span class="card-number">02</span>
-                <i class="fas fa-robot"></i>
-                <h3>CRM Conversacional</h3>
-                <p style="margin-bottom: 0.5rem; color: white; font-weight: 600;">Powered by Kommo</p>
-                <p>Automatiza tus ventas sin perder el toque humano. El primer CRM del mundo basado en mensajería para gestionar leads de WhatsApp e Instagram.</p>
-            </div>
+                <i class="fas fa-tasks"></i>
+                <h3>Gestión de Proyectos</h3>
+                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Ordena el caos operativo.</p>
+                <p>Visualiza el avance de tu equipo en tiempo real. Planifica tareas y elimina las hojas de cálculo desactualizadas.</p>
+                
+                <div class="tech-tag">
+                    Powered by: <strong>monday.com</strong>
+                </div>
+            </a>
 
-            <div class="card reveal delay-300">
+            <a href="servicios-soporte.html" class="card reveal delay-300">
                 <span class="card-number">03</span>
-                <i class="fab fa-whatsapp"></i>
-                <h3>Chat Multiagente</h3>
-                <p style="margin-bottom: 0.5rem; color: white; font-weight: 600;">Powered by Mercately</p>
-                <p>Conecta a todo tu equipo de ventas a una sola línea de WhatsApp. Monitorea conversaciones en tiempo real y unifica tu atención al cliente.</p>
-            </div>
-
-            <div class="card reveal delay-400">
-                <span class="card-number">04</span>
                 <i class="fas fa-headset"></i>
-                <h3>Helpdesk AI & Conversión</h3>
-                <p style="margin-bottom: 0.5rem; color: white; font-weight: 600;">Powered by Gorgias</p>
-                <p>Para tiendas con +30 tickets diarios. Su Agente AI resuelve el 60% del soporte y el Asistente de Tienda eleva la conversión un 75%.</p>
-            </div>
+                <h3>Helpdesk & Atención AI</h3>
+                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Soporte 24/7 sin burnout.</p>
+                <p>Centraliza tickets y utiliza IA para responder preguntas frecuentes al instante, elevando la satisfacción y la recompra.</p>
+                
+                <div class="tech-tag">
+                    Powered by: <strong>Gorgias | Zoho Desk</strong>
+                </div>
+            </a>
 
-            <div class="card reveal delay-500">
+            <a href="servicios-zoho.html" class="card reveal delay-400">
+                <span class="card-number">04</span>
+                <i class="fas fa-building"></i>
+                <h3>Ecosistema Empresarial</h3>
+                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Tu empresa conectada y profesional.</p>
+                <p>Desde correo corporativo seguro hasta un CRM integral. Gestión financiera, operativa y de RRHH en una sola suite unificada.</p>
+                
+                <div class="tech-tag">
+                    Powered by: <strong>ZOHO One & Mail</strong>
+                </div>
+            </a>
+
+            <a href="#contacto" class="card reveal delay-500" style="border-color: rgba(255, 215, 0, 0.3);">
                 <span class="card-number">05</span>
                 <i class="fas fa-laptop-code"></i>
                 <h3>Implementación Crispy</h3>
-                <p style="margin-bottom: 0.5rem; color: white; font-weight: 600;">Consultoría Técnica</p>
+                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Consultoría Técnica</p>
                 <p>No solo te entregamos las licencias. Configuramos, integramos y capacitamos a tu equipo para que la tecnología funcione (y cruja) desde el primer día.</p>
-            </div>
+                
+                <div class="tech-tag">
+                    Metodología: <strong>Propia</strong>
+                </div>
+            </a>
 
         </div>
     </section>
@@ -509,6 +547,7 @@
             </div>
             <div class="partners-flex">
                 <img src="monday-badge.png" alt="Monday Partner" class="partner-logo">
+                <img src="zoho-badge.png" alt="Zoho Partner" class="partner-logo">
                 <img src="kommo-badge.png" alt="Kommo Partner" class="partner-logo">
                 <img src="mercately-badge.png" alt="Mercately Partner" class="partner-logo">
                 <img src="gorgias-badge.png" alt="Gorgias Partner" class="partner-logo" style="border-radius: 20px;">
@@ -528,7 +567,7 @@
         <div class="section-title">
             <h2>Hablemos</h2>
             <div class="line"></div>
-            <p>Agenda una cita con nuestros expertos. Descubre cómo herramientas como Kommo pueden revolucionar tu gestión de clientes y ventas.</p>
+            <p>Agenda una cita con nuestros expertos. Descubre cómo herramientas como Zoho o Kommo pueden revolucionar tu gestión.</p>
         </div>
         <form class="contact-form">
             <input type="text" placeholder="Tu Nombre / Empresa" required>
