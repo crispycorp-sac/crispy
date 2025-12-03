@@ -45,7 +45,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
@@ -178,12 +178,15 @@
             font-weight: 300;
         }
 
+        /* --- GRILLA DE SERVICIOS (MODIFICADA PARA 2x2) --- */
         .services-grid {
             display: grid;
             gap: 2.5rem;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            /* Forzamos 2 columnas en escritorio para simetría */
+            grid-template-columns: repeat(2, 1fr); 
             justify-content: center;
-            justify-items: center; 
+            max-width: 1000px; /* Limitamos el ancho para que no se estiren mucho */
+            margin: 0 auto 4rem auto; /* Margen inferior para separar del "loop" */
         }
 
         /* CARD MODIFICADA PARA SER LINK */
@@ -201,7 +204,7 @@
             justify-content: flex-start;
             height: 100%;
             width: 100%;
-            text-decoration: none; /* Asegura que no parezca un link azul */
+            text-decoration: none; 
         }
 
         .card:hover {
@@ -209,6 +212,7 @@
             transform: translateY(-10px);
             background: rgba(40, 40, 40, 0.9);
             cursor: pointer;
+            box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.2);
         }
 
         .card i {
@@ -239,9 +243,8 @@
             font-size: 3rem;
         }
 
-        /* Nueva clase para el pie de la tarjeta (Powered By) */
         .tech-tag {
-            margin-top: auto; /* Empuja el contenido al fondo */
+            margin-top: auto; 
             padding-top: 1rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.8rem;
@@ -253,6 +256,112 @@
         
         .tech-tag strong { color: #ccc; }
         .card:hover .tech-tag strong { color: var(--primary); }
+
+        /* --- NUEVA SECCIÓN: IMPLEMENTATION LOOP (El Motor) --- */
+        .implementation-loop-container {
+            position: relative;
+            margin-top: 3rem;
+            padding-top: 3rem;
+        }
+
+        /* Conector visual sutil entre la grilla y el loop */
+        .implementation-loop-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            opacity: 0.3;
+        }
+
+        .implementation-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 1));
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem 5%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+        }
+
+        /* Efecto de brillo en el borde */
+        .implementation-card:hover {
+             border-color: var(--primary);
+             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+        }
+        
+        .loop-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .loop-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            animation: pulse-gold 3s infinite ease-in-out;
+        }
+        
+        @keyframes pulse-gold {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 20px var(--primary); }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        .loop-title h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .loop-title span {
+            color: var(--primary);
+        }
+        .loop-subtitle {
+            color: var(--grey-text);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .loop-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .loop-step {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .implementation-card:hover .loop-step {
+             border-color: rgba(255, 215, 0, 0.3);
+             background: rgba(255, 215, 0, 0.05);
+        }
+
+        .loop-arrow {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
 
         /* --- PARTNERS --- */
         .partners-flex {
@@ -355,44 +464,44 @@
         .delay-400 { transition-delay: 0.4s; }
         .delay-500 { transition-delay: 0.5s; } 
 
-        /* --- RESPONSIVE OPTIMIZADO PARA MÓVIL --- */
+        /* --- RESPONSIVE OPTIMIZADO --- */
+        @media (max-width: 992px) {
+             .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* Mantiene 2x2 en tablets */
+            }
+        }
+
         @media (max-width: 768px) {
             header { 
                 padding: 0.8rem 4%; 
                 gap: 10px; 
             }
             
-            .nav-logo-img {
-                height: 30px; 
-            }
-            
-            .logo-text {
-                font-size: 0.8rem; 
-                line-height: 1.1; 
-                max-width: 150px; 
-            }
-            
-            .btn-cta {
-                padding: 0.5rem 0.8rem; 
-                font-size: 0.75rem; 
-                font-weight: 700;
-                white-space: nowrap; 
-            }
-
+            .nav-logo-img { height: 30px; }
+            .logo-text { font-size: 0.8rem; line-height: 1.1; max-width: 150px; }
+            .btn-cta { padding: 0.5rem 0.8rem; font-size: 0.75rem; white-space: nowrap; }
             nav ul { display: none; } 
             
             #hero { 
-                align-items: center; 
-                text-align: center; 
-                height: auto; 
-                padding-top: 100px; 
-                padding-bottom: 60px;
-                padding-left: 5%;
-                padding-right: 5%;
+                align-items: center; text-align: center; height: auto; 
+                padding-top: 100px; padding-bottom: 60px; padding-left: 5%; padding-right: 5%;
             }
-            
             #hero h1 { font-size: 2.2rem; }
             
+            /* En móvil, la grilla pasa a 1 columna */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Ajustes para el loop en móvil */
+            .implementation-card { padding: 2rem 1.5rem; }
+            .loop-header { flex-direction: column; gap: 1rem; }
+            .loop-icon { font-size: 2.5rem; }
+            .loop-title h3 { font-size: 1.5rem; }
+            .loop-steps { flex-direction: column; gap: 0.8rem; }
+            .loop-arrow { transform: rotate(90deg); } /* Flechas hacia abajo */
+
             footer { flex-direction: column; justify-content: center; gap: 2rem;}
         }
     </style>
@@ -428,8 +537,7 @@
             <p>Impulsamos la modernización tecnológica de tu empresa. Nuestro objetivo es claro: ayudarte a crecer.</p>
         </div>
         
-        <div class="services-grid">
-            <div class="card reveal delay-100" style="pointer-events: none; height: auto;">
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));"> <div class="card reveal delay-100" style="pointer-events: none; height: auto;">
                 <i class="fas fa-chart-line"></i>
                 <h3>Aumenta tus ventas</h3>
                 <p>Maximizamos tus resultados comerciales con estrategias basadas en datos.</p>
@@ -452,7 +560,7 @@
         </div>
     </section>
 
-    <section id="servicios" class="section-padding">
+    <section id="servicios" class="section-padding" style="position: relative; z-index: 1;">
         <div class="section-title reveal">
             <h2>Nuestro Menú Tecnológico</h2>
             <div class="line"></div>
@@ -508,23 +616,42 @@
                     Powered by: <strong>ZOHO One & Mail</strong>
                 </div>
             </a>
+        </div>
 
-            <a href="#contacto" class="card reveal delay-500" style="border-color: rgba(255, 215, 0, 0.3);">
-                <span class="card-number">05</span>
-                <i class="fas fa-laptop-code"></i>
-                <h3>Implementación Crispy</h3>
-                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Consultoría Técnica</p>
-                <p>No solo te entregamos las licencias. Configuramos, integramos y capacitamos a tu equipo para que la tecnología funcione (y cruja) desde el primer día.</p>
-                
-                <div class="tech-tag">
-                    Metodología: <strong>Propia</strong>
+        <div class="implementation-loop-container reveal delay-500">
+            <div class="implementation-card">
+                <i class="fas fa-infinity" style="position: absolute; top: -20px; right: -20px; font-size: 15rem; color: rgba(255,215,0,0.03); transform: rotate(-15deg);"></i>
+
+                <div class="loop-header">
+                    <i class="fas fa-sync-alt loop-icon"></i>
+                    <div class="loop-title">
+                        <p class="loop-subtitle">El Motor de tus Resultados</p>
+                        <h3>Implementación <span>Crispy</span> Recurrente</h3>
+                    </div>
                 </div>
-            </a>
 
+                <p style="max-width: 700px; margin: 0 auto 2rem auto; color: #ccc;">
+                    La tecnología por sí sola no hace milagros. Nuestra metodología asegura que cualquiera de las 4 soluciones anteriores funcione (y cruja) desde el primer día y evolucione con tu negocio.
+                </p>
+
+                <div class="loop-steps">
+                    <div class="loop-step">Consultoría</div>
+                    <i class="fas fa-chevron-right loop-arrow"></i>
+                    <div class="loop-step">Configuración</div>
+                    <i class="fas fa-chevron-right loop-arrow"></i>
+                    <div class="loop-step">Integración</div>
+                    <i class="fas fa-chevron-right loop-arrow"></i>
+                    <div class="loop-step">Capacitación</div>
+                    <i class="fas fa-chevron-right loop-arrow" style="color: var(--grey-text);"></i>
+                    <div class="loop-step" style="background: rgba(255,215,0,0.1); color: var(--primary);">Optimización Continua</div>
+                </div>
+                
+                 <a href="#contacto" class="btn-cta" style="margin-top: 2.5rem;">Hablemos de tu implementación</a>
+            </div>
         </div>
     </section>
 
-    <section class="section-padding" style="background: linear-gradient(to bottom, #111, #050505); text-align: center;">
+    <section class="section-padding" style="background: linear-gradient(to bottom, #111, #050505); text-align: center; padding-top: 3rem;">
             <div class="section-title" style="margin-bottom: 2rem;">
                 <h2 style="font-size: 2rem;">¿Qué es el <span style="color: var(--primary);">Factor Crispy</span>?</h2>
             </div>
