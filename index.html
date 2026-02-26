@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crispy Technology Partners Perú | CTP</title>
-    <meta name="description" content="Somos el socio tecnológico en Perú que tu empresa necesita. Especialistas en automatización de ventas, CRM e IA.">
+    <title>Crispy Corp | Piedra Sinterizada, Solid Surface y Acabados</title>
+    <meta name="description" content="Importadores y representantes exclusivos de SPL y KKR en Perú. Soluciones integrales en piedra sinterizada, solid surface y carpintería de aluminio para obras.">
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />  
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 1. VARIABLES Y RESET --- */
+        /* --- 1. VARIABLES Y RESET (Se mantienen los estilos visuales premium) --- */
         :root {
-            --primary: #FFD700; /* Amarillo Crispy */
+            --primary: #FFD700; 
             --dark: #111111;
             --darker: #0a0a0a;
             --light: #f4f4f4;
@@ -29,14 +26,8 @@
             --transition: all 0.3s ease;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark);
@@ -70,14 +61,7 @@
             backdrop-filter: blur(10px);
         }
         
-        /* --- ESTILOS LOGO + TEXTO --- */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        
+        .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-text {
             color: white;
             font-family: 'Montserrat', sans-serif;
@@ -87,30 +71,9 @@
             text-transform: uppercase;
         }
         
-        .logo-container:hover .logo-text {
-            color: var(--primary);
-            transition: 0.3s;
-        }
-        
-        .nav-logo-img {
-            height: 45px;
-            width: auto;
-            transition: var(--transition);
-        }
-        
-        .nav-logo-img:hover {
-            opacity: 0.8;
-        }
-
+        .nav-logo-img { height: 45px; width: auto; transition: var(--transition); }
         nav ul { display: flex; gap: 2rem; }
-        
-        nav a {
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            text-transform: uppercase;
-        }
-
+        nav a { font-weight: 600; font-size: 0.9rem; transition: var(--transition); text-transform: uppercase; }
         nav a:hover { color: var(--primary); }
 
         .btn-cta {
@@ -123,32 +86,19 @@
             transition: var(--transition);
             display: inline-block;
         }
-
         .btn-cta:hover {
             background: white;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
         }
 
-        /* --- SECCIONES GENÉRICAS --- */
+        /* --- SECCIONES --- */
         .section-padding { padding: 5rem 10%; }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
+        .section-title { text-align: center; margin-bottom: 4rem; }
         .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .section-title p { color: var(--grey-text); max-width: 700px; margin: 1rem auto 0; }
+        .line { width: 80px; height: 4px; background: var(--primary); margin: 0 auto; }
 
-        .line {
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            margin: 0 auto;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO (Actualizado a Construcción) --- */
         #hero {
             height: 90vh;
             display: flex;
@@ -156,82 +106,29 @@
             justify-content: center;
             align-items: flex-start;
             padding: 0 10%;
-            background: linear-gradient(to right, rgba(17,17,17,1) 30%, rgba(17,17,17,0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background: linear-gradient(to right, rgba(17,17,17,1) 30%, rgba(17,17,17,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             position: relative;
         }
-
-        #hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-        }
-
+        #hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; max-width: 850px; }
         #hero h1 span { color: var(--primary); }
+        #hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2.5rem; color: #ddd; }
 
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2.5rem;
-            color: #ddd;
-            font-weight: 300;
-        }
-        
-        /* --- NUEVOS ESTILOS PARA #beneficios (Lista de Valor) --- */
-        .value-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        /* --- VALOR / BENEFICIOS --- */
+        .value-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 0 auto; text-align: center; }
+        .value-item { padding: 1.5rem; border-radius: 10px; background: rgba(26, 26, 26, 0.5); display: flex; flex-direction: column; align-items: center; }
+        .value-item i { font-size: 2.8rem; color: var(--primary); margin-bottom: 1rem; }
 
-        .value-item {
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: var(--transition);
-            background: rgba(26, 26, 26, 0.5); /* Fondo sutil para destacar */
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .value-item i {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .value-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-        
-        .value-item p {
-            color: var(--grey-text);
-            font-size: 0.95rem;
-        }
-        
-        .value-item:hover {
-            background: rgba(40, 40, 40, 0.7);
-        }
-
-        /* --- GRILLA DE SERVICIOS (2x2) --- */
+        /* --- GRID DE PRODUCTOS/SERVICIOS (2x2) --- */
         .services-grid {
             display: grid;
             gap: 2.5rem;
-            /* Forzamos 2 columnas en escritorio para simetría */
             grid-template-columns: repeat(2, 1fr); 
             justify-content: center;
-            max-width: 1000px; /* Limitamos el ancho para que no se estiren mucho */
-            margin: 0 auto 4rem auto; /* Margen inferior para separar del "loop" */
+            max-width: 1100px;
+            margin: 0 auto 4rem auto;
         }
-
-        /* CARD MODIFICADA PARA SER LINK */
         .card {
             background: rgba(26, 26, 26, 0.8);
             padding: 2.5rem 2rem;
@@ -240,84 +137,16 @@
             transition: var(--transition);
             text-align: center;
             position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             height: 100%;
-            width: 100%;
-            text-decoration: none; 
         }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(40, 40, 40, 0.9); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .card-number { position: absolute; top: 1rem; left: 1rem; font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.05); font-size: 3rem; }
+        .brand-tag { margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; }
 
-        .card:hover {
-            border-color: var(--primary);
-            transform: translateY(-10px);
-            background: rgba(40, 40, 40, 0.9);
-            cursor: pointer;
-            box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.2);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 { 
-            font-size: 1.1rem; 
-            margin-bottom: 1rem; 
-            color: white; 
-        }
-        
-        .card p { 
-            font-size: 0.9rem; 
-            color: var(--grey-text); 
-            margin-bottom: 1rem;
-        }
-        
-        .card-number {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            color: rgba(255,255,255,0.05);
-            font-size: 3rem;
-        }
-
-        .tech-tag {
-            margin-top: auto; 
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        .tech-tag strong { color: #ccc; }
-        .card:hover .tech-tag strong { color: var(--primary); }
-
-        /* --- IMPLEMENTATION LOOP (El Motor) --- */
-        .implementation-loop-container {
-            position: relative;
-            margin-top: 3rem;
-            padding-top: 3rem;
-        }
-
-        .implementation-loop-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--primary), transparent);
-            opacity: 0.3;
-        }
-
+        /* --- IMPLEMENTACIÓN LOOP --- */
         .implementation-card {
             background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 1));
             border: 2px solid rgba(255, 215, 0, 0.2);
@@ -326,223 +155,30 @@
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
         }
-
-        .implementation-card:hover {
-             border-color: var(--primary);
-             box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
-        }
-        
-        .loop-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .loop-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            animation: pulse-gold 3s infinite ease-in-out;
-        }
-        
-        @keyframes pulse-gold {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 20px var(--primary); }
-            100% { transform: scale(1); opacity: 0.8; }
-        }
-
-        .loop-title h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-        .loop-title span {
-            color: var(--primary);
-        }
-        .loop-subtitle {
-            color: var(--grey-text);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .loop-steps {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .loop-step {
-            background: rgba(255,255,255,0.05);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            color: white;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            transition: var(--transition);
-        }
-        
-        .implementation-card:hover .loop-step {
-             border-color: rgba(255, 215, 0, 0.3);
-             background: rgba(255, 215, 0, 0.05);
-        }
-
-        .loop-arrow {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
+        .loop-header { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .loop-icon { font-size: 3rem; color: var(--primary); }
+        .loop-steps { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
+        .loop-step { background: rgba(255,255,255,0.05); padding: 0.8rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; }
 
         /* --- PARTNERS --- */
-        .partners-flex {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .partner-logo {
-            max-width: 150px;
-            height: auto;
-            object-fit: contain;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-        
-        .partner-logo:hover {
-            filter: grayscale(10%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
+        .partners-flex { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4rem; margin-top: 2rem; }
+        .partner-logo { max-width: 140px; height: auto; filter: grayscale(100%) invert(1); opacity: 0.6; transition: 0.3s; }
+        .partner-logo:hover { filter: none; opacity: 1; transform: scale(1.1); }
 
         /* --- CONTACTO --- */
         #contacto { background: var(--darker); }
+        .contact-form { max-width: 600px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
+        input, textarea { padding: 1.2rem; border-radius: 8px; border: 2px solid #333; background: #151515; color: white; }
+        button.submit { background: var(--primary); color: var(--dark); padding: 1.2rem; border: none; font-weight: 800; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 3rem auto 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        input, textarea {
-            padding: 1.2rem;
-            border-radius: 8px;
-            border: 2px solid #333;
-            background: #151515;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: #1a1a1a;
-        }
-
-        button.submit {
-            background: var(--primary);
-            color: var(--dark);
-            padding: 1.2rem;
-            border: none;
-            font-weight: 800;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            font-size: 1rem;
-        }
-
-        button.submit:hover { background: white; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 3rem 10%;
-            text-align: center;
-            background: #050505;
-            font-size: 0.9rem;
-            color: #666;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .socials a { margin-left: 15px; font-size: 1.2rem; transition: var(--transition); }
-        .socials a:hover { color: var(--primary); }
-
-        /* --- ANIMACIONES SCROLL --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; } 
-
-        /* --- RESPONSIVE OPTIMIZADO --- */
-        @media (max-width: 992px) {
-             .services-grid {
-                grid-template-columns: repeat(2, 1fr); /* Mantiene 2x2 en tablets */
-            }
-        }
-
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
-            header { 
-                padding: 0.8rem 4%; 
-                gap: 10px; 
-            }
-            
-            .nav-logo-img { height: 30px; }
-            .logo-text { font-size: 0.8rem; line-height: 1.1; max-width: 150px; }
-            .btn-cta { padding: 0.5rem 0.8rem; font-size: 0.75rem; white-space: nowrap; }
-            nav ul { display: none; } 
-            
-            #hero { 
-                align-items: center; text-align: center; height: auto; 
-                padding-top: 100px; padding-bottom: 60px; padding-left: 5%; padding-right: 5%;
-            }
+            nav ul { display: none; }
             #hero h1 { font-size: 2.2rem; }
-            
-            /* En móvil, la grilla de servicios pasa a 1 columna */
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            /* Ajustes para el loop en móvil */
-            .implementation-card { padding: 2rem 1.5rem; }
-            .loop-header { flex-direction: column; gap: 1rem; }
-            .loop-icon { font-size: 2.5rem; }
-            .loop-title h3 { font-size: 1.5rem; }
-            .loop-steps { flex-direction: column; gap: 0.8rem; }
-            .loop-arrow { transform: rotate(90deg); } /* Flechas hacia abajo */
-
-            footer { flex-direction: column; justify-content: center; gap: 2rem;}
+            .services-grid { grid-template-columns: 1fr; }
+            .loop-steps { flex-direction: column; }
         }
     </style>
 </head>
@@ -550,235 +186,178 @@
 
     <header>
         <a href="#hero" class="logo-container">
-            <img src="crispy-logo-web.png" alt="CTP Logo" class="nav-logo-img">
-            <span class="logo-text">Crispy Technology Partners</span>
+            <img src="crispy-logo-web.png" alt="Crispy Logo" class="nav-logo-img">
+            <span class="logo-text">CRISPY CORP</span>
         </a>
         <nav>
             <ul>
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#beneficios">Tu Aliado</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#partners">Partners</a></li>
+                <li><a href="#aliado">Tu Aliado</a></li>
+                <li><a href="#materiales">Materiales</a></li>
+                <li><a href="#partners">Marcas</a></li>
             </ul>
         </nav>
-        <a href="#contacto" class="btn-cta">Agenda Demo</a>
+        <a href="#contacto" class="btn-cta">Cotizar Proyecto</a>
     </header>
 
     <section id="hero">
-        <h1>Soluciones de tecnología <br><span>a tu medida.</span></h1>
-        <p>Somos el socio tecnológico en Perú que tu empresa necesita. Expertos en modernización, nube e Inteligencia Artificial.</p>
-        <a href="#contacto" class="btn-cta">Habla con un experto</a>
+        <div class="reveal">
+            <h1>Materiales de alta gama para <span>proyectos de impacto.</span></h1>
+            <p>Importadores directos y representantes de marcas líderes como SPL y KKR. No solo vendemos planchas, construimos el resultado final de tu obra.</p>
+            <a href="#materiales" class="btn-cta">Ver Soluciones</a>
+        </div>
     </section>
 
-    <section id="beneficios" class="section-padding" style="background: #151515;">
+    <section id="aliado" class="section-padding" style="background: #151515;">
         <div class="section-title reveal">
-            <h2>Tu Aliado Estratégico</h2>
+            <h2>El Valor del Aliado Correcto</h2>
             <div class="line"></div>
-            <p>Impulsamos la modernización tecnológica de tu empresa. Nuestro objetivo es claro: ayudarte a crecer.</p>
+            <p>Una plancha premium solo brilla con una ejecución impecable. En Crispy Corp, cerramos la brecha entre el material y la instalación.</p>
         </div>
         
         <div class="value-list">
             <div class="value-item reveal delay-100">
-                <i class="fas fa-chart-line"></i>
-                <h4>Aumenta tus ventas</h4>
-                <p>Maximizamos tus resultados comerciales con estrategias basadas en datos y automatización CRM.</p>
+                <i class="fas fa-ship"></i>
+                <h4>Importación Directa</h4>
+                <p>Somos mayoristas y representantes directos, asegurando el mejor costo para constructoras y estudios de arquitectura.</p>
             </div>
             <div class="value-item reveal delay-200">
-                <i class="fas fa-flag"></i>
-                <h4>Alcanza tus metas</h4>
-                <p>Alineamos la tecnología con tus objetivos de negocio más ambiciosos, garantizando el ROI.</p>
+                <i class="fas fa-tools"></i>
+                <h4>Instalación Experta</h4>
+                <p>Nadie conoce el material mejor que nosotros. Contamos con equipos especializados para corte, termoformado e instalación en obra.</p>
             </div>
             <div class="value-item reveal delay-300">
-                <i class="fas fa-cogs"></i>
-                <h4>Optimiza procesos</h4>
-                <p>Eficiencia operativa potenciada por IA y automatización de flujos de trabajo inteligentes.</p>
-            </div>
-            <div class="value-item reveal delay-400">
-                <i class="fas fa-hand-holding-usd"></i>
-                <h4>Reduce costos</h4>
-                <p>Genera eficiencias y simplifica la gestión de tu empresa con soluciones integradas.</p>
+                <i class="fas fa-city"></i>
+                <h4>Capacidad para Obras</h4>
+                <p>Especialistas en proyectos multifamiliares: desde mesadas de cocina hasta carpintería de aluminio y barandas metálicas.</p>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="section-padding" style="position: relative; z-index: 1;">
+    <section id="materiales" class="section-padding">
         <div class="section-title reveal">
-            <h2>Nuestro Menú Tecnológico</h2>
+            <h2>Nuestra Colección & Servicios</h2>
             <div class="line"></div>
-            <p>Soluciones integrales de clase mundial para cada etapa de tu negocio.</p>
+            <p>Materiales tecnológicos que imitan la naturaleza y soluciones estructurales de alta durabilidad.</p>
         </div>
         
         <div class="services-grid">
-            
-            <a href="servicios-ventas.html" class="card reveal delay-100">
+            <div class="card reveal delay-100">
                 <span class="card-number">01</span>
-                <i class="fas fa-comments-dollar"></i>
-                <h3>Centralización de Ventas</h3>
-                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Convierte conversaciones en clientes.</p>
-                <p>Unifica WhatsApp, Instagram y Facebook en una sola bandeja. Automatiza respuestas y asegura que ningún lead se quede sin contestar.</p>
-                
-                <div class="tech-tag">
-                    Powered by: <strong>Kommo | Mercately</strong>
-                </div>
-            </a>
+                <i class="fas fa-gem"></i>
+                <h3>Piedra Sinterizada</h3>
+                <p>La dureza de su superficie permite cortar directamente sin afectarla. Resistente a manchas, líquidos, rayos UV y altas temperaturas[cite: 8, 14, 16].</p>
+                <p style="color: white; font-size: 0.85rem; margin-top: 10px;">Ideal para mesadas, fachadas y mobiliario de gran formato (160x320cm)[cite: 18, 19].</p>
+                <div class="brand-tag">REPRESENTANTES EXCLUSIVOS SPL</div>
+            </div>
 
-            <a href="servicios-proyectos.html" class="card reveal delay-200">
+            <div class="card reveal delay-200">
                 <span class="card-number">02</span>
-                <i class="fas fa-tasks"></i>
-                <h3>Gestión de Proyectos</h3>
-                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Ordena el caos operativo.</p>
-                <p>Visualiza el avance de tu equipo en tiempo real. Planifica tareas y elimina las hojas de cálculo desactualizadas.</p>
-                
-                <div class="tech-tag">
-                    Powered by: <strong>monday.com</strong>
-                </div>
-            </a>
+                <i class="fas fa-layer-group"></i>
+                <h3>Solid Surface (Acrílicos)</h3>
+                <p>Superficies no porosas con uniones invisibles[cite: 164, 165]. Material 100% reparable, renovable y termoformable para diseños curvos[cite: 166].</p>
+                <p style="color: white; font-size: 0.85rem; margin-top: 10px;">Perfecto para el sector salud, gastronomía y recepciones comerciales[cite: 162].</p>
+                <div class="brand-tag">REPRESENTANTES KKR</div>
+            </div>
 
-            <a href="servicios-soporte.html" class="card reveal delay-300">
+            <div class="card reveal delay-300">
                 <span class="card-number">03</span>
-                <i class="fas fa-headset"></i>
-                <h3>Helpdesk & Atención AI</h3>
-                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Soporte 24/7 sin burnout.</p>
-                <p>Centraliza tickets y utiliza IA para responder preguntas frecuentes al instante, elevando la satisfacción y la recompra.</p>
-                
-                <div class="tech-tag">
-                    Powered by: <strong>Gorgias | Zoho Desk</strong>
-                </div>
-            </a>
+                <i class="fas fa-window-maximize"></i>
+                <h3>Perfilería & Ventanas</h3>
+                <p>Importadores directos de perfilería de aluminio. Fabricamos e instalamos ventanas de alta gama con eficiencia termoacústica.</p>
+                <p style="color: white; font-size: 0.85rem; margin-top: 10px;">Soluciones personalizadas para fachadas y cierres de edificios.</p>
+                <div class="brand-tag">IMPORTACIÓN DIRECTA</div>
+            </div>
 
-            <a href="servicios-zoho.html" class="card reveal delay-400">
+            <div class="card reveal delay-400">
                 <span class="card-number">04</span>
-                <i class="fas fa-building"></i>
-                <h3>Ecosistema Empresarial</h3>
-                <p style="color: white; font-weight: 600; margin-bottom: 0.5rem;">Tu empresa conectada y profesional.</p>
-                <p>Desde correo corporativo seguro hasta un CRM integral. Gestión financiera, operativa y de RRHH en una sola suite unificada.</p>
-                
-                <div class="tech-tag">
-                    Powered by: <strong>ZOHO One & Mail</strong>
-                </div>
-            </a>
+                <i class="fas fa-shield-alt"></i>
+                <h3>Fierro & Estructuras</h3>
+                <p>Trabajos de herrería fina para obras: barandas, pasamanos y estructuras metálicas de alta resistencia para proyectos multifamiliares.</p>
+                <p style="color: white; font-size: 0.85rem; margin-top: 10px;">Acabados precisos que elevan la plusvalía de tu construcción.</p>
+                <div class="brand-tag">SERVICIOS DE INSTALACIÓN</div>
+            </div>
         </div>
 
         <div class="implementation-loop-container reveal delay-500">
             <div class="implementation-card">
-                <i class="fas fa-infinity" style="position: absolute; top: -20px; right: -20px; font-size: 15rem; color: rgba(255,215,0,0.03); transform: rotate(-15deg);"></i>
-
                 <div class="loop-header">
-                    <i class="fas fa-sync-alt loop-icon"></i>
+                    <i class="fas fa-hard-hat loop-icon"></i>
                     <div class="loop-title">
-                        <p class="loop-subtitle">El Motor de tus Resultados</p>
-                        <h3>Implementación <span>Crispy</span> Recurrente</h3>
+                        <p class="loop-subtitle" style="color: var(--primary);">Gestión Integral de Acabados</p>
+                        <h3>El Ciclo <span>Crispy</span> en Obra</h3>
                     </div>
                 </div>
-
-                <p style="max-width: 700px; margin: 0 auto 2rem auto; color: #ccc;">
-                    La tecnología por sí sola no hace milagros. Nuestra metodología asegura que cualquiera de las 4 soluciones anteriores funcione (y cruja) desde el primer día y evolucione con tu negocio.
-                </p>
-
+                <p style="margin-bottom: 2rem; color: #ccc;">Transformamos planchas en soluciones. Nuestra metodología asegura que el material llegue, se transforme y se instale bajo los más altos estándares.</p>
                 <div class="loop-steps">
-                    <div class="loop-step">Consultoría</div>
-                    <i class="fas fa-chevron-right loop-arrow"></i>
-                    <div class="loop-step">Configuración</div>
-                    <i class="fas fa-chevron-right loop-arrow"></i>
-                    <div class="loop-step">Integración</div>
-                    <i class="fas fa-chevron-right loop-arrow"></i>
-                    <div class="loop-step">Capacitación</div>
-                    <i class="fas fa-chevron-right loop-arrow" style="color: var(--grey-text);"></i>
-                    <div class="loop-step" style="background: rgba(255,215,0,0.1); color: var(--primary);">Optimización Continua</div>
+                    <div class="loop-step">Suministro Mayorista</div>
+                    <i class="fas fa-arrow-right" style="color: var(--primary);"></i>
+                    <div class="loop-step">Corte y Transformación</div>
+                    <i class="fas fa-arrow-right" style="color: var(--primary);"></i>
+                    <div class="loop-step">Logística a Obra</div>
+                    <i class="fas fa-arrow-right" style="color: var(--primary);"></i>
+                    <div class="loop-step" style="background: rgba(255,215,0,0.1); color: var(--primary);">Instalación y Acabado Final</div>
                 </div>
-                
-                 <a href="#contacto" class="btn-cta" style="margin-top: 2.5rem;">Hablemos de tu implementación</a>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" style="background: linear-gradient(to bottom, #111, #050505); text-align: center; padding-top: 3rem;">
-            <div class="section-title" style="margin-bottom: 2rem;">
-                <h2 style="font-size: 2rem;">¿Qué es el <span style="color: var(--primary);">Factor Crispy</span>?</h2>
-            </div>
-            
-            <div style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #ddd;">
-                <p style="margin-bottom: 1.5rem;">
-                    En el mundo de la consultoría tecnológica, "serio" a menudo se confunde con "lento" y "aburrido". Nosotros no.
-                </p>
-                <p>
-                    El <strong>Factor Crispy</strong> significa implementar tecnología que funciona al instante. Sin burocracia innecesaria, sin procesos oxidados. Creemos en soluciones ágiles, directas y que hacen "click" con tu equipo desde el primer día.
-                </p>
-                <br>
-                <i class="fas fa-bolt" style="color: var(--primary); font-size: 2rem;"></i>
-            </div>
-        </section>
-    
-    <section id="partners" class="section-padding" style="background: #151515; padding-bottom: 3rem;">
-            <div class="section-title" style="margin-bottom: 2rem;">
-                <h4>Nuestros Partnerships Globales</h4>
-            </div>
-            <div class="partners-flex">
-                <img src="monday-badge.png" alt="Monday Partner" class="partner-logo">
-                <img src="zoho-badge.png" alt="Zoho Partner" class="partner-logo">
-                <img src="kommo-badge.png" alt="Kommo Partner" class="partner-logo">
-                <img src="mercately-badge.png" alt="Mercately Partner" class="partner-logo">
-                <img src="gorgias-badge.png" alt="Gorgias Partner" class="partner-logo" style="border-radius: 20px;">
-                <img src="adobe-badge.png" alt="Adobe Partner" class="partner-logo">
-            </div>
-        </section>
-        
-        <section class="section-padding" style="padding-top: 2rem; padding-bottom: 4rem; background: #151515; text-align: center;">
-             <p style="color: #666; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 2rem;">Confían en Nosotros</p>
-             <div class="partners-flex" style="gap: 4rem;">
-                 <img src="cliente-sanit.jpg" alt="Sanit Service" class="partner-logo">
-                <img src="cliente-zenu.png" alt="Zen U" class="partner-logo">
-            </div>
-        </section>
-        
+    <section class="section-padding" style="background: linear-gradient(to bottom, #111, #050505); text-align: center;">
+        <div class="section-title">
+            <h2>¿Qué es el <span style="color: var(--primary);">Factor Crispy</span> en Construcción?</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #ddd;">
+            <p>En el sector construcción, "calidad" a menudo significa retrasos y sobrecostos. Nosotros lo cambiamos. El <strong>Factor Crispy</strong> es eficiencia operativa: respuesta inmediata, stock garantizado y un equipo de instalación que no necesita supervisión constante. Materiales premium con ejecución de primer nivel.</p>
+            <br>
+            <i class="fas fa-check-double" style="color: var(--primary); font-size: 2rem;"></i>
+        </div>
+    </section>
+
+    <section id="partners" class="section-padding" style="background: #151515; text-align: center;">
+        <h4 style="margin-bottom: 3rem; letter-spacing: 2px; color: #666;">MARCAS QUE REPRESENTAMOS</h4>
+        <div class="partners-flex">
+            <img src="logo-spl.png" alt="SPL San Pietro" class="partner-logo">
+            <img src="logo-kkr.png" alt="KKR Solid Surface" class="partner-logo">
+            <img src="logo-aluminio.png" alt="Aluminio Premium" class="partner-logo">
+        </div>
+    </section>
+
     <section id="contacto" class="section-padding">
         <div class="section-title">
-            <h2>Hablemos</h2>
+            <h2>Inicia tu Cotización</h2>
             <div class="line"></div>
-            <p>Agenda una cita con nuestros expertos. Descubre cómo herramientas como Zoho o Kommo pueden revolucionar tu gestión.</p>
+            <p>Ya sea para venta de planchas al por mayor o para servicios de instalación integral, estamos listos para potenciar tu obra.</p>
         </div>
         <form class="contact-form">
-            <input type="text" placeholder="Tu Nombre / Empresa" required>
-            <input type="email" placeholder="Tu Correo Corporativo" required>
-            <textarea rows="4" placeholder="¿Qué proceso te gustaría automatizar?" required></textarea>
-            <button type="submit" class="submit">SOLICITAR DEMOSTRACIÓN</button>
+            <input type="text" placeholder="Nombre / Empresa / Constructora" required>
+            <input type="email" placeholder="Correo Corporativo" required>
+            <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto (Metraje, tipo de material, ubicación...)" required></textarea>
+            <button type="submit" class="submit">SOLICITAR COTIZACIÓN PROFESIONAL</button>
         </form>
     </section>
 
     <footer>
         <a href="#hero" class="logo-container">
-            <img src="crispy-logo-web.png" alt="CTP Logo" class="nav-logo-img">
-            <span class="logo-text">Somos Crispy</span>
+            <img src="crispy-logo-web.png" alt="Crispy Logo" class="nav-logo-img">
+            <span class="logo-text">Somos Crispy Corp</span>
         </a>
-        <p>&copy; 2024 Crispy Technology Partners. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Crispy Corp S.A.C. Todos los derechos reservados.</p>
         <div class="socials">
-            <a href="https://www.linkedin.com/company/crispy-technology-partners/"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="https://wa.me/51994753687"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
     <script>
-        // Configuración del Observador
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1 // Se activa cuando el 10% del elemento es visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active'); // Agrega la clase que lo hace visible
-                    observer.unobserve(entry.target); // Deja de observar una vez animado
+                    entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        // Seleccionar todos los elementos que tengan la clase 'reveal'
-        document.querySelectorAll('.reveal').forEach((el) => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
-
 </body>
 </html>
