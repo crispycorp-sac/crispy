@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crispy Corp | Piedra Sinterizada, Solid Surface y Acabados</title>
-    <meta name="description" content="Importadores y representantes exclusivos de SPL y KKR en Perú. Soluciones integrales en piedra sinterizada, solid surface y carpintería de aluminio para obras.">
+    <meta name="description" content="Importadores y representantes de SPL y KKR en Perú. Soluciones integrales en piedra sinterizada, solid surface y carpintería de aluminio y fierro para obras.">
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,174 +13,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- 1. VARIABLES Y RESET (Se mantienen los estilos visuales premium) --- */
-        :root {
-            --primary: #FFD700; 
-            --dark: #111111;
-            --darker: #0a0a0a;
-            --light: #f4f4f4;
-            --grey-text: #aaa;
-            --transition: all 0.3s ease;
-        }
+<style>
+    :root {
+        /* Paleta Arquitectónica */
+        --primary: #C5A059;    /* Dorado Champaña / Bronce */
+        --primary-light: #D4AF37; 
+        --dark: #1A1A1A;       /* Negro Carbón (más suave) */
+        --darker: #0F0F0F;
+        --light: #F5F5F5;      /* Blanco Humo */
+        --grey-text: #999;
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif; /* Cambio a Serif para lujo */
+        font-weight: 700;
+        text-transform: none; /* Quitamos el exceso de mayúsculas */
+        letter-spacing: 0px;
+    }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300; /* Letra más delgada = más elegante */
+    }
 
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
+    /* Ajuste para que los números de las tarjetas no se vean toscos */
+    .card-number {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+    }
+    
+    /* Botones más refinados */
+    .btn-cta {
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        border: 1px solid var(--primary);
+        background: transparent;
+        color: var(--primary);
+    }
 
-        /* --- NAVEGACIÓN --- */
-        header {
-            background: rgba(17, 17, 17, 0.95);
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-            backdrop-filter: blur(10px);
-        }
-        
-        .logo-container { display: flex; align-items: center; gap: 12px; }
-        .logo-text {
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-        
-        .nav-logo-img { height: 45px; width: auto; transition: var(--transition); }
-        nav ul { display: flex; gap: 2rem; }
-        nav a { font-weight: 600; font-size: 0.9rem; transition: var(--transition); text-transform: uppercase; }
-        nav a:hover { color: var(--primary); }
-
-        .btn-cta {
-            background: var(--primary);
-            color: var(--dark);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 800;
-            text-transform: uppercase;
-            transition: var(--transition);
-            display: inline-block;
-        }
-        .btn-cta:hover {
-            background: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
-        }
-
-        /* --- SECCIONES --- */
-        .section-padding { padding: 5rem 10%; }
-        .section-title { text-align: center; margin-bottom: 4rem; }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .line { width: 80px; height: 4px; background: var(--primary); margin: 0 auto; }
-
-        /* --- HERO (Actualizado a Construcción) --- */
-        #hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 10%;
-            background: linear-gradient(to right, rgba(17,17,17,1) 30%, rgba(17,17,17,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        #hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; max-width: 850px; }
-        #hero h1 span { color: var(--primary); }
-        #hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2.5rem; color: #ddd; }
-
-        /* --- VALOR / BENEFICIOS --- */
-        .value-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 0 auto; text-align: center; }
-        .value-item { padding: 1.5rem; border-radius: 10px; background: rgba(26, 26, 26, 0.5); display: flex; flex-direction: column; align-items: center; }
-        .value-item i { font-size: 2.8rem; color: var(--primary); margin-bottom: 1rem; }
-
-        /* --- GRID DE PRODUCTOS/SERVICIOS (2x2) --- */
-        .services-grid {
-            display: grid;
-            gap: 2.5rem;
-            grid-template-columns: repeat(2, 1fr); 
-            justify-content: center;
-            max-width: 1100px;
-            margin: 0 auto 4rem auto;
-        }
-        .card {
-            background: rgba(26, 26, 26, 0.8);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: var(--transition);
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(40, 40, 40, 0.9); }
-        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .card-number { position: absolute; top: 1rem; left: 1rem; font-family: 'Montserrat', sans-serif; color: rgba(255,255,255,0.05); font-size: 3rem; }
-        .brand-tag { margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: var(--primary); font-weight: 700; letter-spacing: 1px; }
-
-        /* --- IMPLEMENTACIÓN LOOP --- */
-        .implementation-card {
-            background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(15, 15, 15, 1));
-            border: 2px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 3rem 5%;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .loop-header { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
-        .loop-icon { font-size: 3rem; color: var(--primary); }
-        .loop-steps { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
-        .loop-step { background: rgba(255,255,255,0.05); padding: 0.8rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; }
-
-        /* --- PARTNERS --- */
-        .partners-flex { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 4rem; margin-top: 2rem; }
-        .partner-logo { max-width: 140px; height: auto; filter: grayscale(100%) invert(1); opacity: 0.6; transition: 0.3s; }
-        .partner-logo:hover { filter: none; opacity: 1; transform: scale(1.1); }
-
-        /* --- CONTACTO --- */
-        #contacto { background: var(--darker); }
-        .contact-form { max-width: 600px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
-        input, textarea { padding: 1.2rem; border-radius: 8px; border: 2px solid #333; background: #151515; color: white; }
-        button.submit { background: var(--primary); color: var(--dark); padding: 1.2rem; border: none; font-weight: 800; cursor: pointer; border-radius: 8px; text-transform: uppercase; }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) {
-            nav ul { display: none; }
-            #hero h1 { font-size: 2.2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .loop-steps { flex-direction: column; }
-        }
-    </style>
+    .btn-cta:hover {
+        background: var(--primary);
+        color: var(--dark);
+    }
+    .section-title h2 {
+    font-size: 3rem; /* Más grande y elegante */
+    color: var(--light);
+    }
+    
+    .section-title p {
+        font-style: italic;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+    }
+    
+    #hero h1 {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+    
+    /* Las tarjetas ahora parecen muestras de materiales */
+    .card {
+        background: #222;
+        border: 1px solid #333;
+        border-radius: 0; /* Bordes rectos = más arquitectónico */
+    }
+    
+    .brand-tag {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 0.7rem;
+        color: var(--grey-text);
+    }
+</style>
 </head>
 <body>
 
