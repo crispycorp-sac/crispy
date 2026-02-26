@@ -385,6 +385,37 @@
         .services-grid { grid-template-columns: 1fr; }
         .loop-steps { flex-direction: column; }
     }
+    
+    /* --- SECCIÓN DE LOGOS DE MARCAS --- */
+    .brands-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem; /* Espacio entre logos */
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
+
+    .brand-logo-item {
+        height: 50px; /* Altura fija para todos */
+        width: 150px;  /* Ancho máximo para mantener orden */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: grayscale(100%) opacity(0.6); /* Los hace ver elegantes y uniformes */
+        transition: var(--transition);
+    }
+
+    .brand-logo-item:hover {
+        filter: grayscale(0%) opacity(1); /* Cobran color al pasar el mouse */
+    }
+
+    .brand-logo-item img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain; /* Evita que se estiren o deformen */
+    }
 </style>
 </head>
 <body>
@@ -520,11 +551,16 @@
 
     <section id="partners" class="section-padding" style="background: #151515; text-align: center;">
         <h4 style="margin-bottom: 3rem; letter-spacing: 2px; color: #666;">MARCAS QUE REPRESENTAMOS</h4>
-        <div class="partners-flex">
-            <img src="logo-spl.png" alt="SPL San Pietro" class="partner-logo">
-            <img src="logo-kkr.png" alt="KKR Solid Surface" class="partner-logo">
-            <img src="logo-aluminio.png" alt="Aluminio Premium" class="partner-logo">
-        </div>
+        <div class="brands-container">
+            <div class="brand-logo-item">
+                <img src="url_de_tu_logo_SPL.png" alt="SPL Stone">
+            </div>
+        
+            <div class="brand-logo-item">
+                <img src="url_de_tu_logo_KKR.png" alt="KKR Solid Surface">
+            </div>
+
+    </div>
     </section>
 
     <section id="contacto" class="section-padding">
