@@ -325,6 +325,26 @@
     }
 
     /* --- CONTACTO --- */
+
+    .contact-form {
+        max-width: 800px; /* Evita que el formulario sea demasiado ancho */
+        margin: 0 auto;   /* Lo centra horizontalmente */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;        /* Espacio uniforme entre campos */
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        width: 100%;      /* Asegura que ocupen el ancho del contenedor */
+        display: block;
+    }
+
+    .contact-form button.submit {
+        align-self: center; /* Centra solo el botón */
+        padding: 1.2rem 4rem; /* Botón más estilizado */
+        width: auto;        /* Que no ocupe todo el ancho si no quieres */
+    }
     input, textarea {
         background: transparent;
         border: none;
@@ -576,7 +596,7 @@
             <input type="text" placeholder="Nombre / Empresa / Constructora" required>
             <input type="email" placeholder="Correo Corporativo" required>
             <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto (Metraje, tipo de material, ubicación...)" required></textarea>
-            <button type="submit" class="submit">SOLICITAR COTIZACIÓN PROFESIONAL</button>
+            <button type="submit" class="submit">SOLICITAR COTIZACIÓN PROFESIONAL &rarr;</button>
         </form>
     </section>
 
