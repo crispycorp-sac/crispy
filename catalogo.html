@@ -157,15 +157,23 @@
     </footer>
 
     <script>
-    const menuToggle = document.getElementById('mobile-menu');
-    const navMenu = document.getElementById('nav-menu');
-
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        
-        // Animación simple de las rayitas (opcional)
-        menuToggle.classList.toggle('is-active');
-    });
+        // Seleccionamos los elementos correctos
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+    
+        // Agregamos el evento de clic al botón de hamburguesa
+        menuToggle.addEventListener('click', () => {
+            // Al hacer clic, añadimos o quitamos la clase 'active' al nav
+            navMenu.classList.toggle('active');
+        });
+    
+        // OPCIONAL: Cerrar el menú automáticamente al hacer clic en un enlace
+        // (Muy útil para páginas One-Page como el index)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
     </script>
     
 
