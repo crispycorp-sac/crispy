@@ -1,0 +1,688 @@
+/* --- 1. VARIABLES Y RESET --- */
+:root {
+    --primary: #C5A059;
+    --primary-light: #D4AF37;
+    --dark: #1A1A1A;
+    --darker: #0F0F0F;
+    --light: #F5F5F5;
+    --grey-text: #888;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --header-height: 72px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--light);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- NAVEGACIÓN --- */
+header {
+    background: rgba(26, 26, 26, 0.98);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(10px);
+    height: var(--header-height);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--light);
+}
+
+.nav-logo-img {
+    height: 40px;
+    filter: brightness(1.2);
+}
+
+nav ul { display: flex; gap: 2.5rem; }
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    color: var(--grey-text);
+}
+
+nav a:hover, nav a.active { color: var(--primary); }
+
+/* Hamburger button — hidden on desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1100;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--light);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* Animate hamburger to X when active */
+.menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.btn-cta {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 0.7rem 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    display: inline-block;
+    background: transparent;
+    white-space: nowrap;
+}
+
+.btn-cta:hover {
+    background: var(--primary);
+    color: var(--dark);
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+/* --- SECCIONES --- */
+.section-padding { padding: 8rem 10%; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-title h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-title p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+    background: var(--primary);
+    margin: 0 auto;
+}
+
+/* --- HERO (index) --- */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--header-height) + 4rem) 10% 4rem;
+    background: linear-gradient(to right, rgba(15,15,15,0.9) 30%, rgba(15,15,15,0.2)),
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+#hero h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    font-weight: 700;
+}
+
+#hero h1 span {
+    color: var(--primary);
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#hero p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 3rem;
+    color: #ccc;
+    border-left: 2px solid var(--primary);
+    padding-left: 20px;
+}
+
+/* --- HERO CATÁLOGO --- */
+#hero-catalog {
+    padding: calc(var(--header-height) + 5rem) 5% 5rem;
+    text-align: center;
+    background: var(--darker);
+    border-bottom: 1px solid #333;
+}
+
+#hero-catalog h1 { font-size: 4rem; margin-bottom: 1rem; }
+#hero-catalog h1 span { color: var(--primary); font-style: italic; }
+#hero-catalog p { color: var(--grey-text); max-width: 600px; margin: 0 auto; }
+
+/* --- BENEFICIOS / VALOR --- */
+.value-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.value-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.value-item p {
+    color: var(--grey-text);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* --- GRID DE PRODUCTOS (2x2) --- */
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #222;
+    padding: 4rem 3rem;
+    border: 1px solid #333;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    background: #282828;
+}
+
+.card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card p {
+    color: var(--grey-text);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.card-number {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(197, 160, 89, 0.1);
+    font-size: 4rem;
+}
+
+.brand-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    border-top: 1px solid #444;
+    padding-top: 1.5rem;
+    margin-top: auto;
+    display: block;
+}
+
+/* --- IMPLEMENTACIÓN LOOP --- */
+.implementation-loop-container { width: 100%; }
+
+.implementation-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 5rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 5rem auto 0;
+}
+
+.loop-title h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.loop-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+
+.loop-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.loop-icon {
+    font-size: 3rem !important;
+    color: var(--primary);
+    opacity: 0.5;
+}
+
+.loop-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.loop-step {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--light);
+    border: 1px solid #444;
+    padding: 0.8rem 1.5rem;
+}
+
+/* --- CATÁLOGO DE PRODUCTOS --- */
+.catalog-container { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+
+.product-row {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 8rem;
+}
+
+.product-row:nth-child(even) { flex-direction: row-reverse; }
+
+.product-images {
+    flex: 1;
+    display: grid;
+    gap: 12px;
+    align-self: stretch;
+}
+
+/* 2-image layout: stacked vertically, each image same height */
+.product-images.img-count-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 230px);
+}
+
+/* 3-image layout: first image spans full width, two equal ones below */
+.product-images.img-count-3 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 290px 170px;
+}
+
+.product-images.img-count-3 img:first-child {
+    grid-column: 1 / -1;
+}
+
+.product-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+}
+
+.product-images img:hover { transform: scale(1.02); }
+
+.product-info { flex: 1; }
+.product-info h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+.product-info .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--grey-text);
+    margin-bottom: 2rem;
+    display: block;
+}
+.product-info p { margin-bottom: 1.5rem; color: #ccc; }
+
+.specs-list { margin-top: 2rem; border-top: 1px solid #333; padding-top: 2rem; }
+.specs-list li { margin-bottom: 1rem; display: flex; gap: 10px; align-items: flex-start; }
+.specs-list i { color: var(--primary); margin-top: 5px; font-size: 0.9rem; flex-shrink: 0; }
+.specs-list strong { color: var(--light); font-weight: 600; }
+
+/* --- CONTACTO --- */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    display: block;
+}
+
+.contact-form button.submit {
+    align-self: center;
+    padding: 1.2rem 4rem;
+    width: auto;
+}
+
+input, textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    padding: 1.5rem 0.5rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    border-radius: 0;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+button.submit {
+    margin-top: 2rem;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 1.2rem;
+    color: var(--dark);
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+}
+
+button.submit:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+/* --- LOGOS DE MARCAS --- */
+.brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.brand-logo-item {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%) opacity(0.6);
+    transition: var(--transition);
+}
+
+.brand-logo-item:hover {
+    filter: grayscale(0%) opacity(1);
+}
+
+.brand-logo-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 5rem 10%;
+    background: #0a0a0a;
+    border-top: 1px solid #222;
+    text-align: center;
+}
+
+/* --- ANIMACIONES REVEAL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* Tablet & below */
+@media (max-width: 1024px) {
+    /* Show hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Hide CTA button in header to save space */
+    header > .btn-cta {
+        display: none;
+    }
+
+    /* Nav becomes fullscreen dropdown */
+    nav {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        padding: 2.5rem 0;
+        text-align: center;
+        border-bottom: 1px solid var(--primary);
+        backdrop-filter: blur(10px);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    /* Two-column grid → one column */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .implementation-card {
+        padding: 3rem 2rem;
+    }
+
+    .loop-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .loop-steps {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .loop-steps .fa-arrow-right {
+        transform: rotate(90deg);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+
+    #hero-catalog h1 {
+        font-size: 2.4rem;
+    }
+
+    .section-padding {
+        padding: 5rem 6%;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+    }
+
+    /* Catalog rows stack vertically */
+    .product-row,
+    .product-row:nth-child(even) {
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 5rem;
+    }
+
+    .product-images.img-count-2 {
+        grid-template-rows: repeat(2, 200px);
+    }
+
+    .product-images.img-count-3 {
+        grid-template-rows: 220px 140px;
+    }
+
+    .product-info h2 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 3rem 2rem;
+    }
+
+    .card h3 {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        padding: 3rem 6%;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+}
