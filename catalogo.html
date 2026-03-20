@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Crispy Studio</title>
+    <meta name="description" content="Catálogo de productos prefabricados en Solid Surface por Crispy Studio. Diseño arquitectónico para tu hogar.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES Y RESET (Heredados del Index) --- */
+        :root {
+            --primary: #C5A059;
+            --dark: #1A1A1A;
+            --darker: #0F0F0F;
+            --light: #F5F5F5;
+            --grey-text: #888;
+            --transition: all 0.4s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; color: var(--light); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            background: rgba(26, 26, 26, 0.98);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; }
+        nav ul { display: flex; gap: 2.5rem; }
+        nav a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--grey-text); transition: var(--transition); }
+        nav a:hover, nav a.active { color: var(--primary); }
+        
+        .btn-cta {
+            border: 1px solid var(--primary); color: var(--primary); padding: 0.7rem 1.8rem;
+            font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
+        }
+        .btn-cta:hover { background: var(--primary); color: var(--dark); }
+
+        /* --- HERO CATÁLOGO --- */
+        #hero-catalog {
+            padding: 12rem 5% 5rem;
+            text-align: center;
+            background: var(--darker);
+            border-bottom: 1px solid #333;
+        }
+        #hero-catalog h1 { font-size: 4rem; margin-bottom: 1rem; }
+        #hero-catalog h1 span { color: var(--primary); font-style: italic; }
+        #hero-catalog p { color: var(--grey-text); max-width: 600px; margin: 0 auto; }
+
+        /* --- CATÁLOGO DE PRODUCTOS --- */
+        .catalog-container { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .product-row {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            margin-bottom: 8rem;
+        }
+        
+        /* Alternar orden para estilo revista */
+        .product-row:nth-child(even) { flex-direction: row-reverse; }
+
+        .product-images {
+            flex: 1;
+            display: grid;
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .product-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-height: 450px;
+        }
+
+        .product-images img:hover { transform: scale(1.02); border-color: var(--primary); }
+
+        .product-info { flex: 1; }
+        .product-info h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .product-info .subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: var(--grey-text); margin-bottom: 2rem; display: block; }
+        .product-info p { margin-bottom: 1.5rem; color: #ccc; }
+        
+        .specs-list { margin-top: 2rem; border-top: 1px solid #333; padding-top: 2rem; }
+        .specs-list li { margin-bottom: 1rem; display: flex; gap: 10px; align-items: flex-start; }
+        .specs-list i { color: var(--primary); margin-top: 5px; font-size: 0.9rem; }
+        .specs-list strong { color: var(--light); font-weight: 600; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .product-row, .product-row:nth-child(even) { flex-direction: column; gap: 3rem; margin-bottom: 5rem; }
+            .product-images img { max-height: 350px; }
+            #hero-catalog h1 { font-size: 3rem; }
+            nav { display: none; } /* En móvil sugeriría un menú hamburguesa luego */
+        }
+        
+        footer { padding: 3rem 5%; background: #0a0a0a; border-top: 1px solid #222; text-align: center; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <span class="logo-text">CRISPY Studio</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+            </ul>
+        </nav>
+        <a href="index.html#contacto" class="btn-cta">Cotizar Proyecto</a>
+    </header>
+
+    <section id="hero-catalog">
+        <h1>Colección <span>Exclusiva</span></h1>
+        <p>Piezas de diseño arquitectónico fabricadas en Solid Surface. Higiene, durabilidad extrema y estética sin uniones para transformar tus espacios.</p>
+    </section>
+
+    <section class="catalog-container">
+
+        <div class="product-row">
+            <div class="product-images" style="grid-template-columns: 1fr;">
+                <img src="Luminare2.jpg" alt="Vanitorio Luminare">
+            </div>
+            <div class="product-info">
+                <span class="subtitle">Vanitorio Suspendido</span>
+                <h2>Mueble de Baño "Luminare"</h2>
+                <p>Transforma tu baño en un spa personal con nuestro Vanitorio Suspendido Luminare. Este mueble de baño no es solo una pieza funcional, es una obra de diseño minimalista pensada para quienes buscan lo mejor en estética y durabilidad.</p>
+                <p><strong>⚪ Diseño Monolítico e Higiénico:</strong> La encimera y el lavabo están integrados en una sola pieza de Solid Surface, eliminando uniones donde suele acumularse moho o suciedad. Su acabado ofrece un tacto sedoso y una apariencia de piedra natural premium.</p>
+                <p><strong>⚪ Superior al Mármol y Melamina Tradicional:</strong> A diferencia de los muebles de baño convencionales, nuestro material es 100% impermeable, no se hincha con el vapor y es totalmente reparable. Si se raya o se mancha, se puede pulir y queda como nuevo.</p>
+                
+                <ul class="specs-list">
+                    <li><i class="fas fa-chevron-right"></i> <span><strong>Diseño:</strong> Suspendido (flotante) para mayor amplitud visual.</span></li>
+                    <li><i class="fas fa-chevron-right"></i> <span><strong>Almacenamiento:</strong> Sistema de doble cajón de gran capacidad con cierre suave.</span></li>
+                    <li><i class="fas fa-chevron-right"></i> <span><strong>Material:</strong> Lavadero y Encimera en Solid Surface. Gabinete en Melamina RH.</span></li>
+                    <li><i class="fas fa-chevron-right"></i> <span><strong>Medidas:</strong> 1000mm x 300mm x 400mm</span></li>
+                    <li><i class="fas fa-chevron-right"></i> <span><strong>Higiene:</strong> Superficie no porosa y antibacteriana.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-images">
+                <img src="Nazca1.jpg" alt="Estante Nazca 1">
+                <img src="Nazca2.jpg" alt="Estante Nazca 2">
+            </div>
+            <div class="product-info">
+                <span class="subtitle">Mobiliario Arquitectónico</span>
+                <h2>Estante Modular "Nazca"</h2>
+                <p>Un diseño arquitectónico en tu hogar. Este estante destaca por su estructura geométrica y asimétrica, perfecta para espacios modernos y elegantes. Sus módulos ofrecen una sensación de movimiento y sofisticación que no encontrarás en los estantes tradicionales.</p>
+                <p>Ya sea para exhibir tus libros favoritos, obras de arte o plantas, te ofrece infinitas posibilidades de organización. Su acabado en blanco puro es fácil de limpiar y mantener, eliminando las preocupaciones por manchas o rayaduras.</p>
+                
+                <ul class="specs-list">
+                    <li><i class="fas fa-star"></i> <span><strong>Medidas Exactas:</strong> 760 mm x 1600 mm x 200 mm.</span></li>
+                    <li><i class="fas fa-star"></i> <span><strong>Material:</strong> Solid Surface de alta gama (12 mm de espesor).</span></li>
+                    <li><i class="fas fa-star"></i> <span><strong>Color:</strong> Blanco puro.</span></li>
+                    <li><i class="fas fa-star"></i> <span><strong>Diseño:</strong> Estructura geométrica y asimétrica, sin uniones visibles.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-images">
+                <img src="SilkStone1.jpg" alt="Mesa Comedor Silk Stone">
+                <img src="SilkStone2.jpg" alt="Mesa Comedor Silk Stone Detalle">
+            </div>
+            <div class="product-info">
+                <span class="subtitle">Centro de Reunión</span>
+                <h2>Mesa de Comedor "Silk Stone"</h2>
+                <p>Un diseño arquitectónico en tu hogar. Su diseño monolítico y minimalista crea una sensación de amplitud y pulcritud perfecta para espacios modernos y elegantes.</p>
+                <p><strong>Superior al mármol y las piedras tradicionales.</strong> Olvídate de las preocupaciones por manchas o fragilidad. El Solid Surface es un material no poroso y 100% reparable, mucho más resistente al uso diario. En caso de cualquier rayadura, puede pulirse para recuperar su estado original.</p>
+                
+                <ul class="specs-list">
+                    <li><i class="fas fa-check"></i> <span><strong>Medidas Exactas:</strong> Rectangular de 1200 mm (largo) x 750 mm (ancho) x 750 mm (alto).</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Material:</strong> Solid Surface de alta gama (12 mm).</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Color:</strong> Blanco puro o color granito.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Diseño:</strong> Estructura continua termoformada, sin uniones visibles.</span></li>
+                    <li><i class="fas fa-check"></i> <span><strong>Tacto e Higiene:</strong> Cálido, antibacteriano y fácil de limpiar.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-images">
+                <img src="Monolitic1.jpg" alt="Mesa Centro Monolitic 1">
+                <img src="Monolitic2.jpg" alt="Mesa Centro Monolitic 2">
+            </div>
+            <div class="product-info">
+                <span class="subtitle">Elegancia Estructural</span>
+                <h2>Mesa de Centro "Monolitic 80"</h2>
+                <p>Renueva tu sala con una pieza de diseño arquitectónico. Nuestra mesa de centro destaca por su estética de bloque continuo, sin uniones visibles y con acabados de alta precisión. Una evolución superior al mármol o la piedra sinterizada.</p>
+                
+                <ul class="specs-list">
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Medidas exactas:</strong> 800 mm x 600 mm x 400 mm.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Colores:</strong> Blanco puro y acabado tipo Granito.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Material:</strong> Solid Surface de alta resistencia. Incluye vidrio.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Resistencia y Mantenimiento:</strong> No absorbe líquidos. 100% pulible y reparable.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span><strong>Personalización:</strong> Fabricamos en las medidas que necesites.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-images">
+                <img src="Organic1.jpg" alt="Organic Curve 1">
+                <img src="Organic2.jpg" alt="Organic Curve 2">
+                <img src="Organic3.jpg" alt="Organic Curve 3">
+            </div>
+            <div class="product-info">
+                <span class="subtitle">Vanguardia Curva</span>
+                <h2>Mesa de Centro "Organic Curve"</h2>
+                <p>¡Eleva el estilo de tu sala! Si buscas una pieza que combine diseño vanguardista, durabilidad extrema y un acabado impecable, esta mesa es para ti. Curvas fluidas sin uniones y reparables; una evolución superior al mármol.</p>
+                <p>Al ser fabricantes directos, el estado del producto es siempre nuevo y fabricado bajo pedido (7 días calendario) para asegurar acabados de primera. ¡Podemos personalizar dimensiones para que encaje perfectamente en tu espacio!</p>
+                
+                <ul class="specs-list">
+                    <li><i class="fas fa-circle"></i> <span><strong>Medidas:</strong> 800 mm x 600 mm x 400 mm.</span></li>
+                    <li><i class="fas fa-circle"></i> <span><strong>Diseño:</strong> Estructura curva continua termoformada con opción de revistero integrado.</span></li>
+                    <li><i class="fas fa-circle"></i> <span><strong>Colores:</strong> Blanco puro (mate/satinado) y acabado tipo Granito.</span></li>
+                    <li><i class="fas fa-circle"></i> <span><strong>Material:</strong> Solid Surface (no poroso, antibacterial y fácil de limpiar).</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <span class="logo-text">CRISPY Studio</span>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #555;">&copy; 2026 Crispy Corp S.A.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
