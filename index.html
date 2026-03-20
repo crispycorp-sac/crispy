@@ -202,15 +202,23 @@
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+        // Seleccionamos los elementos correctos
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+    
+        // Agregamos el evento de clic al botón de hamburguesa
+        menuToggle.addEventListener('click', () => {
+            // Al hacer clic, añadimos o quitamos la clase 'active' al nav
+            navMenu.classList.toggle('active');
+        });
+    
+        // OPCIONAL: Cerrar el menú automáticamente al hacer clic en un enlace
+        // (Muy útil para páginas One-Page como el index)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        });
     </script>
 </body>
 </html>
