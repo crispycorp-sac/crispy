@@ -8,137 +8,34 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* --- VARIABLES Y RESET (Heredados del Index) --- */
-        :root {
-            --primary: #C5A059;
-            --dark: #1A1A1A;
-            --darker: #0F0F0F;
-            --light: #F5F5F5;
-            --grey-text: #888;
-            --transition: all 0.4s ease;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; color: var(--light); }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- NAVEGACIÓN --- */
-        header {
-            background: rgba(26, 26, 26, 0.98);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-            backdrop-filter: blur(10px);
-        }
-        
-        .logo-container { display: flex; align-items: center; gap: 15px; }
-        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; }
-        nav ul { display: flex; gap: 2.5rem; }
-        nav a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--grey-text); transition: var(--transition); }
-        nav a:hover, nav a.active { color: var(--primary); }
-        
-        .btn-cta {
-            border: 1px solid var(--primary); color: var(--primary); padding: 0.7rem 1.8rem;
-            font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
-        }
-        .btn-cta:hover { background: var(--primary); color: var(--dark); }
-
-        /* --- HERO CATÁLOGO --- */
-        #hero-catalog {
-            padding: 12rem 5% 5rem;
-            text-align: center;
-            background: var(--darker);
-            border-bottom: 1px solid #333;
-        }
-        #hero-catalog h1 { font-size: 4rem; margin-bottom: 1rem; }
-        #hero-catalog h1 span { color: var(--primary); font-style: italic; }
-        #hero-catalog p { color: var(--grey-text); max-width: 600px; margin: 0 auto; }
-
-        /* --- CATÁLOGO DE PRODUCTOS --- */
-        .catalog-container { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
-        
-        .product-row {
-            display: flex;
-            align-items: center;
-            gap: 5rem;
-            margin-bottom: 8rem;
-        }
-        
-        /* Alternar orden para estilo revista */
-        .product-row:nth-child(even) { flex-direction: row-reverse; }
-
-        .product-images {
-            flex: 1;
-            display: grid;
-            gap: 15px;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-
-        .product-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 4px;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-height: 450px;
-        }
-
-        .product-images img:hover { transform: scale(1.02); border-color: var(--primary); }
-
-        .product-info { flex: 1; }
-        .product-info h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
-        .product-info .subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: var(--grey-text); margin-bottom: 2rem; display: block; }
-        .product-info p { margin-bottom: 1.5rem; color: #ccc; }
-        
-        .specs-list { margin-top: 2rem; border-top: 1px solid #333; padding-top: 2rem; }
-        .specs-list li { margin-bottom: 1rem; display: flex; gap: 10px; align-items: flex-start; }
-        .specs-list i { color: var(--primary); margin-top: 5px; font-size: 0.9rem; }
-        .specs-list strong { color: var(--light); font-weight: 600; }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .product-row, .product-row:nth-child(even) { flex-direction: column; gap: 3rem; margin-bottom: 5rem; }
-            .product-images img { max-height: 350px; }
-            #hero-catalog h1 { font-size: 3rem; }
-            nav { display: none; } /* En móvil sugeriría un menú hamburguesa luego */
-        }
-        
-        footer { padding: 3rem 5%; background: #0a0a0a; border-top: 1px solid #222; text-align: center; margin-top: 4rem; }
-    </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo-container">
-            <span class="logo-text">CRISPY Studio</span>
-        </a>
-        <nav>
+       <header>
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <div class="logo-text">CRISPY STUDIO</div>
+            </a>
+        </div>
+    
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html" class="active">Catálogo</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <a href="index.html#contacto" class="btn-cta">Cotizar Proyecto</a>
+    
+        <a href="https://wa.me/tu-numero" class="btn-cta">COTIZAR PROYECTO</a>
     </header>
 
     <section id="hero-catalog">
@@ -258,6 +155,19 @@
         <span class="logo-text">CRISPY Studio</span>
         <p style="margin-top: 1rem; font-size: 0.8rem; color: #555;">&copy; 2026 Crispy Corp S.A.C. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        
+        // Animación simple de las rayitas (opcional)
+        menuToggle.classList.toggle('is-active');
+    });
+    </script>
+    
 
 </body>
 </html>
