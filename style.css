@@ -382,11 +382,52 @@
     }
 
     /* --- RESPONSIVE --- */
-    @media (max-width: 1024px) {
-        #hero h1 { font-size: 3.5rem; }
-        .services-grid { grid-template-columns: 1fr; }
-        .loop-steps { flex-direction: column; }
+/* --- RESPONSIVE (CELULARES Y TABLETS) --- */
+@media (max-width: 1024px) {
+    /* 1. Mostramos el botón de hamburguesa */
+    .menu-toggle {
+        display: flex;
+        z-index: 1100; /* Asegura que esté sobre el menú desplegado */
     }
+
+    /* 2. Ocultamos el botón CTA en el header móvil para limpiar espacio */
+    .btn-cta { display: none; } 
+
+    /* 3. Configuramos el menú desplegable (oculto por defecto) */
+    nav {
+        display: none; /* Se oculta completamente */
+        position: absolute;
+        top: 100%; /* Aparece justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 40px 0;
+        text-align: center;
+        border-bottom: 2px solid var(--accent-color); /* Línea dorada decorativa */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* 4. Clase que activa el JS para mostrar el menú */
+    nav.active {
+        display: block;
+        opacity: 1;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    nav a {
+        font-size: 1.2rem; /* Texto más grande para tocar con el dedo */
+    }
+
+    /* 5. SOLUCIÓN AL TEXTO TAPADO: Empujamos el contenido hacia abajo */
+    #hero, #hero-catalog, .main-content {
+        padding-top: 130px !important; /* Ajusta este valor si la barra es más alta */
+    }
+}
    
     /* --- SECCIÓN DE LOGOS DE MARCAS --- */
     .brands-container {
